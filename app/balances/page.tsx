@@ -73,7 +73,6 @@ export default function BalancesPage() {
                 key={product.name}
                 {...product}
                 accentColor="#e8748a"
-                index={i}
               />
             ))}
           </div>

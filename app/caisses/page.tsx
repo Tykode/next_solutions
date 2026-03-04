@@ -85,7 +85,6 @@ export default function CaissesPage() {
                 key={product.name}
                 {...product}
                 accentColor="#b07ae0"
-                index={i}
               />
             ))}
           </div>

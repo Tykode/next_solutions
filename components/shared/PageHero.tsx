@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -38,10 +35,7 @@ export function PageHero({
 
         {/* Breadcrumbs */}
         {breadcrumbs && (
-          <motion.nav
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
+          <nav
             className="flex items-center gap-1 text-[12px] text-white/38 mb-8 font-medium"
           >
             <Link href="/" className="hover:text-white/65 transition-colors flex items-center gap-1">
@@ -55,17 +49,12 @@ export function PageHero({
                 </Link>
               </span>
             ))}
-          </motion.nav>
+          </nav>
         )}
 
-        {/* Badge shadcn */}
+        {/* Badge */}
         {badge && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-5"
-          >
+          <div className="mb-5">
             <Badge
               style={{
                 background: `${accentColor}12`,
@@ -77,30 +66,22 @@ export function PageHero({
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: accentColor }} />
               {badge}
             </Badge>
-          </motion.div>
+          </div>
         )}
 
         {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+        <h1
           className="text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-[1.08] tracking-[-0.03em] max-w-3xl mb-5"
           style={{ fontFamily: "var(--font-display)" }}
         >
           {title}
-        </motion.h1>
+        </h1>
 
-        {/* Subtitle — lisible */}
+        {/* Subtitle */}
         {subtitle && (
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.16 }}
-            className="text-[15px] text-white/60 max-w-xl leading-relaxed"
-          >
+          <p className="text-[15px] text-white/60 max-w-xl leading-relaxed">
             {subtitle}
-          </motion.p>
+          </p>
         )}
       </div>
 

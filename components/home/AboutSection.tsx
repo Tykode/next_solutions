@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 
@@ -41,39 +38,32 @@ export function AboutSection() {
 
           {/* ── Left: texte ── */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-8">
+              <span className="block w-8 h-px bg-[#f0a050]/40 shrink-0" />
+              <span className="text-[11px] font-semibold text-[#f0a050]/60 uppercase tracking-[0.16em]">
+                Next Solutions · Cayenne · 2014
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h2
+              className="text-[clamp(2.4rem,5vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.035em] mb-8"
+              style={{ fontFamily: "var(--font-display)" }}
             >
-              {/* Eyebrow */}
-              <div className="flex items-center gap-3 mb-8">
-                <span className="block w-8 h-px bg-[#f0a050]/40 shrink-0" />
-                <span className="text-[11px] font-semibold text-[#f0a050]/60 uppercase tracking-[0.16em]">
-                  Next Solutions · Cayenne · 2014
-                </span>
-              </div>
+              <span className="text-white">Pas de revendeur.</span>
+              <br />
+              <span className="text-white/50">Tout géré en direct,</span>
+              <br />
+              <span className="text-white/50">depuis Cayenne.</span>
+            </h2>
 
-              {/* Headline — lisible, pas murmuré */}
-              <h2
-                className="text-[clamp(2.4rem,5vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.035em] mb-8"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                <span className="text-white">Pas de revendeur.</span>
-                <br />
-                <span className="text-white/50">Tout géré en direct,</span>
-                <br />
-                <span className="text-white/50">depuis Cayenne.</span>
-              </h2>
-
-              {/* Body */}
-              <p className="text-[15px] text-white/60 leading-[1.8] mb-12 max-w-[500px]">
-                Depuis 2014, Next Solutions équipe, forme et maintient les points
-                de vente de Guyane. Équipement, déploiement, formation, SAV —
-                nous couvrons chaque étape du commerce local.
-              </p>
-            </motion.div>
+            {/* Body */}
+            <p className="text-[15px] text-white/60 leading-[1.8] mb-12 max-w-[500px]">
+              Depuis 2014, Next Solutions équipe, forme et maintient les points
+              de vente de Guyane. Équipement, déploiement, formation, SAV —
+              nous couvrons chaque étape du commerce local.
+            </p>
 
             {/* Stats */}
             <div className="grid grid-cols-2">
@@ -81,12 +71,8 @@ export function AboutSection() {
                 const isLeft = i % 2 === 0;
                 const isTop  = i < 2;
                 return (
-                  <motion.div
+                  <div
                     key={s.label}
-                    initial={{ opacity: 0, y: 14 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.08 + 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className={[
                       "border-white/[0.08]",
                       isLeft ? "pr-8 border-r" : "pl-8",
@@ -102,29 +88,14 @@ export function AboutSection() {
                     <div className="text-[12px] text-white/42 leading-snug">
                       {s.label}
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
           </div>
 
           {/* ── Right: image produit ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex items-center justify-center"
-          >
-            {/* Warm glow behind product */}
-            <div
-              className="absolute inset-[10%] rounded-full pointer-events-none"
-              style={{
-                background: "radial-gradient(ellipse at 50% 60%, rgba(240,160,80,0.12), transparent 70%)",
-                filter: "blur(28px)",
-              }}
-            />
-
+          <div className="relative flex items-center justify-center">
             <div className="relative w-full aspect-square max-w-[420px] mx-auto">
               <Image
                 src="/images/caisse tactile/aer-store.png"
@@ -134,20 +105,7 @@ export function AboutSection() {
                 style={{ filter: "drop-shadow(0 20px 48px rgba(0,0,0,0.5))" }}
               />
             </div>
-
-            {/* Floating year badge */}
-            <div className="absolute -top-4 -right-2 sm:-right-6 glass rounded-2xl px-5 py-4 shadow-xl shadow-black/35">
-              <div className="text-[10px] font-bold text-white/35 uppercase tracking-[0.14em] mb-1">
-                Fondés en
-              </div>
-              <div
-                className="text-[2rem] font-bold text-white/80 leading-none tracking-[-0.03em]"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                2014
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* ── Pillar strip ── */}

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { Monitor, CreditCard, BarChart3, Scale, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -53,13 +50,7 @@ export function ServicesSection() {
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12"
-        >
+        <div className="mb-12">
           <p className="text-[11px] font-semibold text-[#f0a050]/70 uppercase tracking-[0.15em] mb-3">
             Ce que l&apos;on installe
           </p>
@@ -77,64 +68,56 @@ export function ServicesSection() {
               une couverture complète depuis Cayenne.
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {services.map((s, i) => {
+          {services.map((s) => {
             const Icon = s.icon;
             return (
-              <motion.div
-                key={s.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.4, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <Link href={s.href} className="group block h-full">
-                  <Card className="h-full p-6 flex flex-col hover:border-white/[0.15] hover:-translate-y-1 transition-all duration-300 hover:bg-[var(--c-card)]">
+              <Link key={s.title} href={s.href} className="group block h-full">
+                <Card className="h-full p-6 flex flex-col hover:border-white/[0.15] transition-colors duration-200 hover:bg-[var(--c-card)]">
 
-                    {/* Icon */}
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 shrink-0"
-                      style={{ background: `${s.color}18` }}
-                    >
-                      <Icon className="w-5 h-5" style={{ color: s.color }} />
-                    </div>
+                  {/* Icon */}
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 shrink-0"
+                    style={{ background: `${s.color}18` }}
+                  >
+                    <Icon className="w-5 h-5" style={{ color: s.color }} />
+                  </div>
 
-                    {/* Title */}
-                    <h3
-                      className="text-[15.5px] font-bold text-white/85 group-hover:text-white mb-2.5 transition-colors leading-tight"
-                      style={{ fontFamily: "var(--font-display)" }}
-                    >
-                      {s.title}
-                    </h3>
+                  {/* Title */}
+                  <h3
+                    className="text-[15.5px] font-bold text-white/85 group-hover:text-white mb-2.5 transition-colors leading-tight"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {s.title}
+                  </h3>
 
-                    {/* Description — vraiment lisible */}
-                    <p className="text-[13px] text-white/58 leading-relaxed flex-1 mb-5">
-                      {s.desc}
-                    </p>
+                  {/* Description */}
+                  <p className="text-[13px] text-white/58 leading-relaxed flex-1 mb-5">
+                    {s.desc}
+                  </p>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {s.tags.map((t) => (
-                        <Badge key={t} variant={s.badgeVariant} className="text-[10.5px] px-2 py-0.5">
-                          {t}
-                        </Badge>
-                      ))}
-                    </div>
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {s.tags.map((t) => (
+                      <Badge key={t} variant={s.badgeVariant} className="text-[10.5px] px-2 py-0.5">
+                        {t}
+                      </Badge>
+                    ))}
+                  </div>
 
-                    {/* Link */}
-                    <div
-                      className="flex items-center gap-1.5 text-[12.5px] font-semibold group-hover:gap-2.5 transition-all"
-                      style={{ color: s.color }}
-                    >
-                      Découvrir
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                    </div>
-                  </Card>
-                </Link>
-              </motion.div>
+                  {/* Link */}
+                  <div
+                    className="flex items-center gap-1.5 text-[12.5px] font-semibold"
+                    style={{ color: s.color }}
+                  >
+                    Découvrir
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                </Card>
+              </Link>
             );
           })}
         </div>

@@ -73,7 +73,6 @@ export default function LogicielsPage() {
                 key={product.name}
                 {...product}
                 accentColor="#4f8ef7"
-                index={i}
               />
             ))}
           </div>

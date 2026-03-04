@@ -73,7 +73,6 @@ export default function TPEPage() {
                 key={product.name}
                 {...product}
                 accentColor="#52c48a"
-                index={i}
               />
             ))}
           </div>
