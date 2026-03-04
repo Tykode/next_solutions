@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* Class-based dark mode support */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: var(--font-syne), system-ui, sans-serif;
+  --font-body:    var(--font-dm-sans), system-ui, sans-serif;
+
+  /* ── Native animation tokens ── */
+  --animate-fade-up:   fade-up 0.5s cubic-bezier(0.16,1,0.3,1) both;
+  --animate-fade-in:   fade-in 0.3s ease-out both;
+  --animate-scale-in:  scale-in 0.2s cubic-bezier(0.16,1,0.3,1) both;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  --color-bg:      #05080f;
+  --color-surface: #0b1120;
+  --color-card:    #0f1829;
+  --color-border:  rgba(255,255,255,0.07);
+
+  --color-amber:      #f0a050;
+  --color-amber-soft: rgba(240,160,80,0.12);
+  --color-amber-glow: rgba(240,160,80,0.22);
+
+  --color-caisses:  #b07ae0;
+  --color-logiciels:#4f8ef7;
+  --color-tpe:      #52c48a;
+  --color-balances: #e8748a;
+
+  --color-text:   #e4eaf6;
+  --color-muted:  #4d5e7a;
+  --color-subtle: #7a8fad;
+
+  /* Overridable base colors (remapped per theme) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+/* ─── Theme tokens ─────────────────────────────── */
+:root {
+  --c-bg:           #05080f;
+  --c-surface:      #0b1120;
+  --c-card:         #0f1829;
+  --c-border:       rgba(255,255,255,0.07);
+  --c-border-hover: rgba(255,255,255,0.13);
+  --c-glass-bg:     rgba(11,17,32,0.72);
+  --c-fg:           #e4eaf6;
+  --logo-filter:    none;
+  --map-filter:     invert(90%) hue-rotate(180deg);
+}
+
+.light {
+  --c-bg:           #f4f6fb;
+  --c-surface:      #ffffff;
+  --c-card:         #eaecf5;
+  --c-border:       rgba(0,0,0,0.07);
+  --c-border-hover: rgba(0,0,0,0.13);
+  --c-glass-bg:     rgba(255,255,255,0.78);
+  --c-fg:           #0d1117;
+  --logo-filter:    brightness(0) saturate(100%);
+  --map-filter:     none;
+
+  /* Remap white → near-black so all text-white/XX become dark text */
+  --color-white: #111827;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--c-bg);
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Grain overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  transition: opacity 0.3s;
+}
+
+.light body::after {
+  opacity: 0.018;
+}
+
+/* ─── Heading balance & touch improvements ──────── */
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(240,160,80,0.35); border-radius: 2px; }
+
+::selection { background: rgba(240,160,80,0.25); color: #f0a050; }
+
+/* Reusable utilities */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+.glass {
+  background: var(--c-glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--c-border);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.glow-amber {
+  box-shadow: 0 0 60px rgba(240,160,80,0.15), 0 0 120px rgba(240,160,80,0.06);
+}
+
+.gradient-x {
+  background: linear-gradient(90deg, transparent 0%, #f0a050 50%, transparent 100%);
+}
+
+/* ─── Reduced motion ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ─── Focus visible ─────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #f0a050;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
