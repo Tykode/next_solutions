@@ -3,8 +3,6 @@ import { Resend } from "resend";
 import { contactSchema } from "@/lib/validations";
 import type { ApiResponse } from "@/lib/types";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 /** Escape HTML special chars to prevent injection in email templates */
 function esc(str: string): string {
   return str
@@ -45,6 +43,8 @@ export async function POST(req: NextRequest) {
   }
 
   const { name, email, phone, subject, message } = result.data;
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
     await resend.emails.send({
