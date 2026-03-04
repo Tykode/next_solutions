@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 interface PageHeroProps {
   title: string;
@@ -25,29 +26,11 @@ export function PageHero({
   return (
     <section className={cn("relative pt-36 pb-20 overflow-hidden bg-[var(--c-bg)]", className)}>
 
-      {/* Radial glow */}
+      {/* Glow doux */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse 70% 50% at 50% -5%, ${accentColor}0e, transparent)`,
-        }}
-      />
-
-      {/* Fine grid */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)`,
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      {/* Vertical accent line */}
-      <div
-        className="absolute top-0 right-[18%] w-px h-full opacity-[0.06] pointer-events-none"
-        style={{
-          background: `linear-gradient(180deg, transparent, ${accentColor} 30%, ${accentColor} 70%, transparent)`,
+          background: `radial-gradient(ellipse 65% 45% at 50% -5%, ${accentColor}0a, transparent)`,
         }}
       />
 
@@ -59,15 +42,15 @@ export function PageHero({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="flex items-center gap-1 text-[12px] text-white/25 mb-8 font-medium"
+            className="flex items-center gap-1 text-[12px] text-white/38 mb-8 font-medium"
           >
-            <Link href="/" className="hover:text-white/55 transition-colors flex items-center gap-1">
+            <Link href="/" className="hover:text-white/65 transition-colors flex items-center gap-1">
               <Home className="w-3 h-3" />
             </Link>
             {breadcrumbs.map((crumb) => (
               <span key={crumb.href} className="flex items-center gap-1">
                 <ChevronRight className="w-3 h-3 opacity-40" />
-                <Link href={crumb.href} className="hover:text-white/55 transition-colors">
+                <Link href={crumb.href} className="hover:text-white/65 transition-colors">
                   {crumb.label}
                 </Link>
               </span>
@@ -75,27 +58,31 @@ export function PageHero({
           </motion.nav>
         )}
 
-        {/* Badge */}
+        {/* Badge shadcn */}
         {badge && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-[11.5px] font-semibold mb-5 uppercase tracking-widest"
-            style={{
-              background: `${accentColor}0f`,
-              borderColor: `${accentColor}25`,
-              color: `${accentColor}cc`,
-            }}
+            className="mb-5"
           >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: accentColor }} />
-            {badge}
+            <Badge
+              style={{
+                background: `${accentColor}12`,
+                borderColor: `${accentColor}28`,
+                color: accentColor,
+              }}
+              className="uppercase tracking-widest text-[11px]"
+            >
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: accentColor }} />
+              {badge}
+            </Badge>
           </motion.div>
         )}
 
         {/* Title */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           className="text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-[1.08] tracking-[-0.03em] max-w-3xl mb-5"
@@ -104,20 +91,19 @@ export function PageHero({
           {title}
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Subtitle — lisible */}
         {subtitle && (
           <motion.p
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.16 }}
-            className="text-[15px] text-white/38 max-w-xl leading-relaxed"
+            className="text-[15px] text-white/60 max-w-xl leading-relaxed"
           >
             {subtitle}
           </motion.p>
         )}
       </div>
 
-      {/* Bottom fade */}
       <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[var(--c-bg)] to-transparent pointer-events-none" />
     </section>
   );

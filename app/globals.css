@@ -25,10 +25,10 @@
     to   { opacity: 1; transform: scale(1); }
   }
 
-  --color-bg:      #05080f;
-  --color-surface: #0b1120;
-  --color-card:    #0f1829;
-  --color-border:  rgba(255,255,255,0.07);
+  --color-bg:      #09080c;
+  --color-surface: #100f13;
+  --color-card:    #17151b;
+  --color-border:  rgba(255,255,255,0.08);
 
   --color-amber:      #f0a050;
   --color-amber-soft: rgba(240,160,80,0.12);
@@ -39,9 +39,9 @@
   --color-tpe:      #52c48a;
   --color-balances: #e8748a;
 
-  --color-text:   #e4eaf6;
-  --color-muted:  #4d5e7a;
-  --color-subtle: #7a8fad;
+  --color-text:   #ede9e4;
+  --color-muted:  #6b6270;
+  --color-subtle: #9d95a3;
 
   /* Overridable base colors (remapped per theme) */
   --color-white: #ffffff;
@@ -50,13 +50,13 @@
 
 /* ─── Theme tokens ─────────────────────────────── */
 :root {
-  --c-bg:           #05080f;
-  --c-surface:      #0b1120;
-  --c-card:         #0f1829;
-  --c-border:       rgba(255,255,255,0.07);
-  --c-border-hover: rgba(255,255,255,0.13);
-  --c-glass-bg:     rgba(11,17,32,0.72);
-  --c-fg:           #e4eaf6;
+  --c-bg:           #09080c;
+  --c-surface:      #100f13;
+  --c-card:         #17151b;
+  --c-border:       rgba(255,255,255,0.08);
+  --c-border-hover: rgba(255,255,255,0.15);
+  --c-glass-bg:     rgba(16,15,19,0.75);
+  --c-fg:           #ede9e4;
   --logo-filter:    none;
   --map-filter:     invert(90%) hue-rotate(180deg);
 }

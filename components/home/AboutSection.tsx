@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
 
 const quadStats = [
   { label: "Expertise locale",  value: "10+",  color: "#f0a050" },
@@ -30,84 +31,75 @@ const pillars = [
 
 export function AboutSection() {
   return (
-    <section className="relative py-28 bg-[var(--c-bg)] overflow-hidden">
-      {/* Separator */}
+    <section className="relative py-24 bg-[var(--c-bg)]">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
-
-      {/* Ambient glow */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-[#4f8ef7]/[0.025] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
 
-        {/* ── Main layout: headline left / image right ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-28 items-center mb-24">
+        {/* ── Main layout ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-24 items-center mb-20">
 
-          {/* ── Left: text column ── */}
+          {/* ── Left: texte ── */}
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               {/* Eyebrow */}
-              <div className="flex items-center gap-4 mb-9">
-                <span className="block w-8 h-px bg-[#f0a050]/45 shrink-0" />
-                <span className="text-[11px] font-semibold text-[#f0a050]/55 uppercase tracking-[0.16em]">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="block w-8 h-px bg-[#f0a050]/40 shrink-0" />
+                <span className="text-[11px] font-semibold text-[#f0a050]/60 uppercase tracking-[0.16em]">
                   Next Solutions · Cayenne · 2014
                 </span>
               </div>
 
-              {/* Headline — very large, staggered fade */}
+              {/* Headline — lisible, pas murmuré */}
               <h2
-                className="text-[clamp(2.6rem,5.5vw,5rem)] font-bold leading-[1.03] tracking-[-0.036em] mb-9"
+                className="text-[clamp(2.4rem,5vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.035em] mb-8"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-white">Pas de revendeur.</span>
                 <br />
-                <span className="text-white/18">Tout géré en direct,</span>
+                <span className="text-white/50">Tout géré en direct,</span>
                 <br />
-                <span className="text-white/18">depuis Cayenne.</span>
+                <span className="text-white/50">depuis Cayenne.</span>
               </h2>
 
               {/* Body */}
-              <p className="text-[15px] text-white/38 leading-[1.82] mb-14 max-w-[500px]">
+              <p className="text-[15px] text-white/60 leading-[1.8] mb-12 max-w-[500px]">
                 Depuis 2014, Next Solutions équipe, forme et maintient les points
                 de vente de Guyane. Équipement, déploiement, formation, SAV —
                 nous couvrons chaque étape du commerce local.
               </p>
             </motion.div>
 
-            {/* ── Stats quadrant — no cards, hairline grid ── */}
+            {/* Stats */}
             <div className="grid grid-cols-2">
               {quadStats.map((s, i) => {
-                const isLeft  = i % 2 === 0;
-                const isTop   = i < 2;
-                const classes = [
-                  "border-white/[0.07]",
-                  isLeft  ? "pr-8 border-r"              : "pl-8",
-                  isTop   ? "py-8 border-b"              : "py-8",
-                ].join(" ");
+                const isLeft = i % 2 === 0;
+                const isTop  = i < 2;
                 return (
                   <motion.div
                     key={s.label}
-                    initial={{ opacity: 0, y: 18, scale: 0.96 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{
-                      duration: 0.55,
-                      delay: i * 0.09 + 0.1,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    className={classes}
+                    transition={{ duration: 0.5, delay: i * 0.08 + 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className={[
+                      "border-white/[0.08]",
+                      isLeft ? "pr-8 border-r" : "pl-8",
+                      isTop  ? "py-8 border-b" : "py-8",
+                    ].join(" ")}
                   >
                     <div
-                      className="text-[clamp(2.8rem,4.8vw,4.5rem)] font-bold leading-none tracking-[-0.045em] mb-3 tabular-nums"
+                      className="text-[clamp(2.6rem,4.5vw,4.2rem)] font-bold leading-none tracking-[-0.04em] mb-2.5 tabular-nums"
                       style={{ color: s.color, fontFamily: "var(--font-display)" }}
                     >
                       {s.value}
                     </div>
-                    <div className="text-[11.5px] text-white/28 leading-snug">
+                    <div className="text-[12px] text-white/42 leading-snug">
                       {s.label}
                     </div>
                   </motion.div>
@@ -116,25 +108,23 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* ── Right: floating product image ── */}
+          {/* ── Right: image produit ── */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex items-center justify-center"
           >
-            {/* Diffused color glow behind product */}
+            {/* Warm glow behind product */}
             <div
               className="absolute inset-[10%] rounded-full pointer-events-none"
               style={{
-                background:
-                  "radial-gradient(ellipse at 50% 60%, rgba(79,142,247,0.18), rgba(240,160,80,0.08) 55%, transparent 80%)",
-                filter: "blur(32px)",
+                background: "radial-gradient(ellipse at 50% 60%, rgba(240,160,80,0.12), transparent 70%)",
+                filter: "blur(28px)",
               }}
             />
 
-            {/* Product image — no card, no border, floating */}
             <div className="relative w-full aspect-square max-w-[420px] mx-auto">
               <Image
                 src="/images/caisse tactile/aer-store.png"
@@ -147,11 +137,11 @@ export function AboutSection() {
 
             {/* Floating year badge */}
             <div className="absolute -top-4 -right-2 sm:-right-6 glass rounded-2xl px-5 py-4 shadow-xl shadow-black/35">
-              <div className="text-[10px] font-bold text-white/22 uppercase tracking-[0.14em] mb-1">
+              <div className="text-[10px] font-bold text-white/35 uppercase tracking-[0.14em] mb-1">
                 Fondés en
               </div>
               <div
-                className="text-[2.1rem] font-bold text-white/70 leading-none tracking-[-0.03em]"
+                className="text-[2rem] font-bold text-white/80 leading-none tracking-[-0.03em]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 2014
@@ -160,44 +150,36 @@ export function AboutSection() {
           </motion.div>
         </div>
 
-        {/* ── Pillar strip — border-separated, no cards ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="grid grid-cols-1 sm:grid-cols-3 border-t border-white/[0.07]"
-        >
+        {/* ── Pillar strip ── */}
+        <Separator className="mb-0" />
+        <div className="grid grid-cols-1 sm:grid-cols-3">
           {pillars.map((p, i) => (
             <div
               key={p.label}
               className={[
                 "py-9 flex gap-4",
-                i > 0 ? "sm:pl-10 sm:border-l border-white/[0.07]" : "",
-                i < pillars.length - 1 ? "sm:pr-10 border-b sm:border-b-0 border-white/[0.06]" : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
+                i > 0 ? "sm:pl-10 sm:border-l border-white/[0.08]" : "",
+                i < pillars.length - 1 ? "sm:pr-10 border-b sm:border-b-0 border-white/[0.07]" : "",
+              ].filter(Boolean).join(" ")}
             >
-              {/* Colored dot */}
               <span
-                className="w-1.5 h-1.5 rounded-full mt-[5px] shrink-0"
+                className="w-2 h-2 rounded-full mt-1 shrink-0"
                 style={{ background: p.color }}
               />
               <div>
                 <div
-                  className="text-[13.5px] font-bold text-white/72 mb-1.5"
+                  className="text-[14px] font-bold text-white/80 mb-1.5"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {p.label}
                 </div>
-                <p className="text-[12.5px] text-white/28 leading-relaxed">
+                <p className="text-[13px] text-white/50 leading-relaxed">
                   {p.detail}
                 </p>
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

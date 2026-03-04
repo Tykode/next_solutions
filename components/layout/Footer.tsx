@@ -74,7 +74,7 @@ export function Footer() {
             className="h-7 w-auto"
             style={{ filter: "var(--logo-filter)" }}
           />
-          <p className="text-[13.5px] text-white/35 leading-relaxed max-w-[260px]">
+          <p className="text-[13.5px] text-white/55 leading-relaxed max-w-[260px]">
             Spécialiste du point de vente en Guyane depuis 2014. Plus de 500 commerces équipés à Cayenne, Kourou et Saint-Laurent.
           </p>
 
@@ -88,9 +88,9 @@ export function Footer() {
               <a
                 key={text}
                 href={href}
-                className="flex items-center gap-2.5 text-[13px] text-white/35 hover:text-white/70 transition-colors"
+                className="flex items-center gap-2.5 text-[13px] text-white/52 hover:text-white/80 transition-colors"
               >
-                <Icon className="w-3.5 h-3.5 text-[#f0a050]/50 shrink-0" />
+                <Icon className="w-3.5 h-3.5 text-[#f0a050]/60 shrink-0" />
                 {text}
               </a>
             ))}
@@ -100,7 +100,7 @@ export function Footer() {
         {/* Link columns */}
         {cols.map((col) => (
           <div key={col.title}>
-            <p className="text-[10px] font-semibold text-white/25 uppercase tracking-[0.12em] mb-4">
+            <p className="text-[10px] font-semibold text-white/38 uppercase tracking-[0.12em] mb-4">
               {col.title}
             </p>
             <ul className="space-y-2.5">
@@ -108,7 +108,7 @@ export function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-[13.5px] text-white/40 hover:text-white/80 transition-colors"
+                    className="text-[13.5px] text-white/55 hover:text-white/85 transition-colors"
                   >
                     {l.label}
                   </Link>
