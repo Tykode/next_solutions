@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
@@ -35,7 +33,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setProductsOpen(false);
+      if (e.key === "Escape") { setProductsOpen(false); setMobileOpen(false); }
     };
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
@@ -44,9 +42,9 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-[var(--c-bg)]/85 backdrop-blur-2xl border-b border-white/[0.05] shadow-[0_1px_0_0_rgba(255,255,255,0.04)]"
+          ? "bg-[var(--c-bg)]/90 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_1px_0_0_var(--c-border)]"
           : "bg-transparent"
       )}
     >
@@ -54,16 +52,23 @@ export function Navbar() {
         <div className="flex items-center justify-between h-[70px]">
 
           {/* ─── Logo ─── */}
-          <Link href="/" className="shrink-0 relative z-10">
-            <Image
-              src="/images/logo-light.svg"
-              alt="Next Solutions"
-              width={124}
-              height={30}
-              className="h-[28px] w-auto"
-              style={{ filter: "var(--logo-filter)" }}
-              priority
-            />
+          <Link
+            href="/"
+            className="shrink-0 relative z-10 flex items-baseline gap-0 select-none"
+            aria-label="Next Solutions — accueil"
+          >
+            <span
+              className="text-[20px] font-bold tracking-[-0.03em] text-[#f0a050] leading-none"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Next
+            </span>
+            <span
+              className="text-[20px] font-bold tracking-[-0.03em] text-white leading-none"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {" "}Solutions
+            </span>
           </Link>
 
           {/* ─── Desktop nav ─── */}
@@ -88,8 +93,8 @@ export function Navbar() {
                 className={cn(
                   "flex items-center gap-1 px-3.5 py-2 text-[13.5px] font-medium tracking-[-0.01em] rounded-lg transition-all",
                   productsOpen
-                    ? "text-white bg-white/[0.07]"
-                    : "text-white/55 hover:text-white/90 hover:bg-white/[0.05]"
+                    ? "text-white bg-white/[0.08]"
+                    : "text-white/55 hover:text-white/90 hover:bg-white/[0.06]"
                 )}
               >
                 Produits
@@ -101,55 +106,54 @@ export function Navbar() {
                 />
               </button>
 
-              <AnimatePresence>
-                {productsOpen && (
-                  <motion.div
-                    id="products-dropdown"
-                    role="menu"
-                    initial={{ opacity: 0, y: 8, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.97 }}
-                    transition={{ duration: 0.14, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute top-[calc(100%+8px)] left-0 w-[280px] glass rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.3)]"
-                  >
-                    <div className="px-4 pt-3.5 pb-2">
-                      <span className="text-[10px] font-semibold text-white/25 uppercase tracking-[0.12em]">
-                        Nos solutions
-                      </span>
-                    </div>
-                    <div className="p-2 pt-0">
-                      {products.map((p) => (
-                        <Link
-                          key={p.href}
-                          href={p.href}
-                          className="group flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.06] transition-colors"
-                        >
-                          <span
-                            className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-[11px] font-bold"
-                            style={{ background: `${p.color}1a`, color: p.color }}
-                          >
-                            {p.label[0]}
-                          </span>
-                          <div className="flex-1 min-w-0">
-                            <div className="text-[13px] font-medium text-white/80 group-hover:text-white transition-colors leading-tight">
-                              {p.label}
-                            </div>
-                            <div className="text-[11px] text-white/30 mt-0.5">{p.desc}</div>
-                          </div>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-white/15 group-hover:text-white/40 transition-all shrink-0" />
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
+              {/* CSS-only dropdown — no framer-motion */}
+              <div
+                id="products-dropdown"
+                role="menu"
+                className={cn(
+                  "absolute top-[calc(100%+8px)] left-0 w-[280px] glass rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.12)]",
+                  "transition-all duration-150 origin-top-left",
+                  productsOpen
+                    ? "opacity-100 scale-100 pointer-events-auto"
+                    : "opacity-0 scale-[0.96] pointer-events-none"
                 )}
-              </AnimatePresence>
+              >
+                <div className="px-4 pt-3.5 pb-2">
+                  <span className="text-[10px] font-semibold text-white/25 uppercase tracking-[0.12em]">
+                    Nos solutions
+                  </span>
+                </div>
+                <div className="p-2 pt-0">
+                  {products.map((p) => (
+                    <Link
+                      key={p.href}
+                      href={p.href}
+                      className="group flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.06] transition-colors"
+                    >
+                      <span
+                        className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-[11px] font-bold"
+                        style={{ background: `${p.color}1a`, color: p.color }}
+                      >
+                        {p.label[0]}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-[13px] font-medium text-white/80 group-hover:text-white transition-colors leading-tight">
+                          {p.label}
+                        </div>
+                        <div className="text-[11px] text-white/30 mt-0.5">{p.desc}</div>
+                      </div>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-white/15 group-hover:text-white/40 transition-all shrink-0" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="px-3.5 py-2 text-[13.5px] font-medium tracking-[-0.01em] text-white/55 hover:text-white/90 hover:bg-white/[0.05] rounded-lg transition-all"
+                className="px-3.5 py-2 text-[13.5px] font-medium tracking-[-0.01em] text-white/55 hover:text-white/90 hover:bg-white/[0.06] rounded-lg transition-all"
               >
                 {l.label}
               </Link>
@@ -161,10 +165,9 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/rendez-vous"
-              className="relative group overflow-hidden inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-semibold text-[#05080f] bg-[#f0a050] rounded-full transition-all duration-300 hover:shadow-[0_0_32px_rgba(240,160,80,0.38)] hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-semibold text-[#05080f] bg-[#f0a050] rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_28px_rgba(240,160,80,0.35)] active:scale-[0.98]"
             >
-              <span className="relative z-10">Prendre RDV</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
+              Prendre RDV
             </Link>
           </div>
 
@@ -184,57 +187,52 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* ─── Mobile drawer ─── */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            id="mobile-nav"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden overflow-hidden backdrop-blur-2xl border-t border-white/[0.05]"
-            style={{ background: "color-mix(in oklch, var(--c-bg) 96%, transparent)" }}
-          >
-            <div className="max-w-[1320px] mx-auto px-5 py-4 space-y-0.5">
-              <p className="px-3 pb-1.5 pt-0.5 text-[10px] font-semibold text-white/25 uppercase tracking-[0.12em]">
-                Produits
-              </p>
-              {products.map((p) => (
-                <Link
-                  key={p.href}
-                  href={p.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.06] transition-colors"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: p.color }} />
-                  <span className="text-sm text-white/65">{p.label}</span>
-                </Link>
-              ))}
-              <div className="h-px bg-white/[0.05] my-1.5 mx-3" />
-              {links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-3 py-2.5 text-sm text-white/65 hover:text-white rounded-xl hover:bg-white/[0.06] transition-all"
-                >
-                  {l.label}
-                </Link>
-              ))}
-              <div className="pt-2 pb-1">
-                <Link
-                  href="/rendez-vous"
-                  onClick={() => setMobileOpen(false)}
-                  className="block w-full text-center py-3 bg-[#f0a050] text-[#05080f] text-sm font-bold rounded-full"
-                >
-                  Prendre rendez-vous
-                </Link>
-              </div>
-            </div>
-          </motion.div>
+      {/* ─── Mobile drawer — CSS transition, no framer-motion ─── */}
+      <div
+        id="mobile-nav"
+        className={cn(
+          "lg:hidden overflow-hidden backdrop-blur-2xl border-t border-white/[0.06] transition-all duration-200 ease-out",
+          mobileOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
         )}
-      </AnimatePresence>
+        style={{ background: "color-mix(in oklch, var(--c-bg) 96%, transparent)" }}
+      >
+        <div className="max-w-[1320px] mx-auto px-5 py-4 space-y-0.5">
+          <p className="px-3 pb-1.5 pt-0.5 text-[10px] font-semibold text-white/25 uppercase tracking-[0.12em]">
+            Produits
+          </p>
+          {products.map((p) => (
+            <Link
+              key={p.href}
+              href={p.href}
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.06] transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: p.color }} />
+              <span className="text-sm text-white/65">{p.label}</span>
+            </Link>
+          ))}
+          <div className="h-px bg-white/[0.05] my-1.5 mx-3" />
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setMobileOpen(false)}
+              className="block px-3 py-2.5 text-sm text-white/65 hover:text-white rounded-xl hover:bg-white/[0.06] transition-all"
+            >
+              {l.label}
+            </Link>
+          ))}
+          <div className="pt-2 pb-1">
+            <Link
+              href="/rendez-vous"
+              onClick={() => setMobileOpen(false)}
+              className="block w-full text-center py-3 bg-[#f0a050] text-[#05080f] text-sm font-bold rounded-full hover:bg-[#f5b060] transition-colors"
+            >
+              Prendre rendez-vous
+            </Link>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

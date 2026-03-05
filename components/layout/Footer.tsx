@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 const cols = [
@@ -66,14 +65,20 @@ export function Footer() {
 
         {/* Brand col */}
         <div className="lg:col-span-2 space-y-5">
-          <Image
-            src="/images/logo-light.svg"
-            alt="Next Solutions"
-            width={120}
-            height={28}
-            className="h-7 w-auto"
-            style={{ filter: "var(--logo-filter)" }}
-          />
+          <div className="flex items-baseline gap-0 select-none">
+            <span
+              className="text-[20px] font-bold tracking-[-0.03em] text-[#f0a050] leading-none"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Next
+            </span>
+            <span
+              className="text-[20px] font-bold tracking-[-0.03em] text-white leading-none"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {" "}Solutions
+            </span>
+          </div>
           <p className="text-[13.5px] text-white/55 leading-relaxed max-w-[260px]">
             Spécialiste du point de vente en Guyane depuis 2014. Plus de 500 commerces équipés à Cayenne, Kourou et Saint-Laurent.
           </p>

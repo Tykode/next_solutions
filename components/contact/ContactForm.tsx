@@ -166,7 +166,7 @@ export function ContactForm() {
               type="submit"
               disabled={status === "loading"}
               aria-busy={status === "loading"}
-              className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] disabled:opacity-50 disabled:cursor-not-allowed text-[#05080f] text-[14px] font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] hover:scale-[1.01]"
+              className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] disabled:opacity-50 disabled:cursor-not-allowed text-[#ffffff] text-[14px] font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] hover:scale-[1.01]"
             >
               {status === "loading" ? (
                 <><Loader2 className="w-4 h-4 animate-spin" /> Envoi en cours…</>

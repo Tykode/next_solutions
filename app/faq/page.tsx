@@ -171,7 +171,7 @@ export default function FAQPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:+594594251326"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#f0a050] text-[#05080f] text-[13.5px] font-bold rounded-full hover:bg-[#f5b060] transition-all hover:shadow-[0_0_24px_rgba(240,160,80,0.35)]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#f0a050] text-[#ffffff] text-[13.5px] font-bold rounded-full hover:bg-[#f5b060] transition-all hover:shadow-[0_0_24px_rgba(240,160,80,0.35)]"
               >
                 +0594 25 13 26
               </a>

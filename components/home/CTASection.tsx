@@ -75,7 +75,7 @@ export function CTASection() {
                   >
                     <Icon
                       className="w-5 h-5"
-                      style={{ color: primary ? "#09080c" : color }}
+                      style={{ color: primary ? "#ffffff" : color }}
                     />
                   </div>
                   <div className="flex-1 min-w-0">
