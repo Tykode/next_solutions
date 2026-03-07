@@ -37,7 +37,7 @@ export function PageHero({
         {breadcrumbs && (
           <nav
             aria-label="Fil d'Ariane"
-            className="flex items-center gap-1 text-[12px] text-white/38 mb-8 font-medium animate-fade-up"
+            className="flex items-center gap-1 text-[12px] text-white/50 mb-8 font-medium animate-fade-up"
             style={{ animationDelay: "0ms" }}
           >
             <Link href="/" aria-label="Accueil" className="hover:text-white/65 transition-colors flex items-center gap-1">

@@ -120,7 +120,7 @@ export function Navbar() {
                 )}
               >
                 <div className="px-4 pt-3.5 pb-2">
-                  <span className="text-[10px] font-semibold text-white/25 uppercase tracking-[0.12em]">
+                  <span className="text-[10px] font-semibold text-white/40 uppercase tracking-[0.12em]">
                     Nos solutions
                   </span>
                 </div>
@@ -142,7 +142,7 @@ export function Navbar() {
                         <div className="text-[13px] font-medium text-white/80 group-hover:text-white transition-colors leading-tight">
                           {p.label}
                         </div>
-                        <div className="text-[11px] text-white/30 mt-0.5">{p.desc}</div>
+                        <div className="text-[11px] text-white/45 mt-0.5">{p.desc}</div>
                       </div>
                       <ArrowUpRight className="w-3.5 h-3.5 text-white/15 group-hover:text-white/40 transition-all shrink-0" />
                     </Link>
@@ -167,7 +167,7 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/rendez-vous"
-              className="btn-shimmer inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-semibold text-[#05080f] bg-[#f0a050] rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_24px_rgba(240,160,80,0.32)] active:scale-[0.97]"
+              className="btn-shimmer inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-semibold text-[#09080c] bg-[#f0a050] rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_24px_rgba(240,160,80,0.32)] active:scale-[0.97]"
             >
               Prendre RDV
             </Link>
@@ -200,7 +200,7 @@ export function Navbar() {
         style={{ background: "color-mix(in oklch, var(--c-bg) 96%, transparent)" }}
       >
         <div className="max-w-[1320px] mx-auto px-5 py-4 space-y-0.5">
-          <p className="px-3 pb-1.5 pt-0.5 text-[10px] font-semibold text-white/25 uppercase tracking-[0.12em]">
+          <p className="px-3 pb-1.5 pt-0.5 text-[10px] font-semibold text-white/40 uppercase tracking-[0.12em]">
             Produits
           </p>
           {products.map((p) => (
@@ -229,7 +229,7 @@ export function Navbar() {
             <Link
               href="/rendez-vous"
               onClick={() => setMobileOpen(false)}
-              className="block w-full text-center py-3 bg-[#f0a050] text-[#05080f] text-sm font-bold rounded-full hover:bg-[#f5b060] transition-all duration-200 active:scale-[0.97]"
+              className="block w-full text-center py-3 bg-[#f0a050] text-[#09080c] text-sm font-bold rounded-full hover:bg-[#f5b060] transition-all duration-200 active:scale-[0.97]"
             >
               Prendre rendez-vous
             </Link>

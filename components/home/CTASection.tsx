@@ -95,7 +95,7 @@ export function CTASection() {
                     </div>
                     <ArrowRight
                       className={`w-4 h-4 shrink-0 group-hover:translate-x-0.5 transition-transform duration-200 ${
-                        primary ? "text-[#09080c]/50" : "text-white/25 group-hover:text-white/55"
+                        primary ? "text-[#09080c]/50" : "text-white/40 group-hover:text-white/65"
                       }`}
                     />
                   </Link>

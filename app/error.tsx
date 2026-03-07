@@ -26,13 +26,13 @@ export default function Error({
         >
           Une erreur est survenue
         </h1>
-        <p className="text-[14px] text-white/35 mb-8 leading-relaxed">
+        <p className="text-[14px] text-white/55 mb-8 leading-relaxed">
           Quelque chose s&apos;est mal passé. Réessayez ou revenez à l&apos;accueil.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={reset}
-            className="px-6 py-3 bg-[#f0a050] text-[#ffffff] text-[13px] font-bold rounded-full hover:bg-[#f5b060] transition-colors"
+            className="px-6 py-3 bg-[#f0a050] text-[#09080c] text-[13px] font-bold rounded-full hover:bg-[#f5b060] transition-colors"
           >
             Réessayer
           </button>

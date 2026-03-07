@@ -66,9 +66,9 @@ export function ServicesSection() {
             >
               4 gammes de solutions
               <br />
-              <span className="text-white/35">pour votre commerce</span>
+              <span className="text-white/45">pour votre commerce</span>
             </h2>
-            <p className="text-[14px] text-white/52 max-w-xs leading-relaxed md:text-right">
+            <p className="text-[14px] text-white/55 max-w-xs leading-relaxed md:text-right">
               Équipements certifiés, support 6j/7. De l&apos;encaissement à la gestion,
               une couverture complète depuis Cayenne.
             </p>

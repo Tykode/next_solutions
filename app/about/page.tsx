@@ -96,7 +96,7 @@ export default function AboutPage() {
               >
                 Informations légales
               </h2>
-              <div className="space-y-3 text-sm text-white/40">
+              <div className="space-y-3 text-sm text-white/55">
                 {[
                   { label: "Forme",   value: "SASU – Société par Actions Simplifiée Unipersonnelle" },
                   { label: "Adresse", value: "1436 Rte de Baduel, Cayenne 97300, Guyane française" },

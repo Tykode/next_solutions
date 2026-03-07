@@ -52,7 +52,7 @@ export function Footer() {
           </div>
           <Link
             href="/rendez-vous"
-            className="btn-shimmer shrink-0 group inline-flex items-center gap-2 px-6 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] text-[#05080f] text-sm font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] active:scale-[0.97]"
+            className="btn-shimmer shrink-0 group inline-flex items-center gap-2 px-6 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] text-[#09080c] text-sm font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] active:scale-[0.97]"
           >
             Planifier un rendez-vous
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -93,7 +93,7 @@ export function Footer() {
               <a
                 key={text}
                 href={href}
-                className="flex items-center gap-2.5 py-1.5 text-[13px] text-white/52 hover:text-white/80 transition-colors min-h-[44px]"
+                className="flex items-center gap-2.5 py-1.5 text-[13px] text-white/55 hover:text-white/85 transition-colors min-h-[44px]"
               >
                 <Icon className="w-3.5 h-3.5 text-[#f0a050]/60 shrink-0" />
                 {text}
@@ -105,7 +105,7 @@ export function Footer() {
         {/* Link columns */}
         {cols.map((col) => (
           <div key={col.title}>
-            <p className="text-[10px] font-semibold text-white/38 uppercase tracking-[0.12em] mb-4">
+            <p className="text-[10px] font-semibold text-white/50 uppercase tracking-[0.12em] mb-4">
               {col.title}
             </p>
             <ul className="space-y-2.5">
@@ -127,7 +127,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/[0.04]">
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-white/20">
+          <p className="text-[12px] text-white/40">
             © {new Date().getFullYear()} Next Solutions — SIRET 52217524900021
           </p>
           <div className="flex gap-5">
@@ -138,7 +138,7 @@ export function Footer() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[12px] text-white/20 hover:text-white/45 transition-colors"
+                className="text-[12px] text-white/40 hover:text-white/65 transition-colors"
               >
                 {l.label}
               </Link>

@@ -84,16 +84,16 @@ export default function CGVPage() {
                 <h2 className="text-base font-bold text-white/80 mb-3">
                   {title}
                 </h2>
-                <p className="text-sm text-white/35 leading-relaxed">{content}</p>
+                <p className="text-sm text-white/60 leading-relaxed">{content}</p>
               </article>
             ))}
           </div>
 
-          <div className="mt-10 p-6 rounded-2xl bg-[#F89851]/8 border border-[#F89851]/20">
+          <div className="mt-10 p-6 rounded-2xl bg-[#f0a050]/8 border border-[#f0a050]/20">
             <p className="text-sm text-white/55">
               <strong>Dernière mise à jour :</strong> 2024.{" "}
               Pour toute question, contactez-nous :{" "}
-              <a href="mailto:contact@next-solutions.fr" className="text-[#F89851] hover:underline">
+              <a href="mailto:contact@next-solutions.fr" className="text-[#f0a050] hover:underline">
                 contact@next-solutions.fr
               </a>
             </p>

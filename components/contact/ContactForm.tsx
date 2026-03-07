@@ -65,7 +65,7 @@ export function ContactForm() {
             >
               Bien reçu !
             </h4>
-            <p className="text-[13px] text-white/35 mb-6 max-w-xs">
+            <p className="text-[13px] text-white/55 mb-6 max-w-xs">
               Votre message est entre de bonnes mains. On revient vers vous sous 24h ouvrées — souvent bien avant.
             </p>
             <button
@@ -85,7 +85,7 @@ export function ContactForm() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-[11.5px] font-semibold text-white/30 mb-1.5 uppercase tracking-wider">
+                <label htmlFor="name" className="block text-[11.5px] font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
                   Nom complet *
                 </label>
                 <input
@@ -100,7 +100,7 @@ export function ContactForm() {
                 {errors.name && <p id="name-error" role="alert" className="mt-1 text-[11.5px] text-red-400">{errors.name.message}</p>}
               </div>
               <div>
-                <label htmlFor="email" className="block text-[11.5px] font-semibold text-white/30 mb-1.5 uppercase tracking-wider">
+                <label htmlFor="email" className="block text-[11.5px] font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
                   Email *
                 </label>
                 <input
@@ -118,14 +118,14 @@ export function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-[11.5px] font-semibold text-white/30 mb-1.5 uppercase tracking-wider">
+              <label htmlFor="phone" className="block text-[11.5px] font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
                 Téléphone
               </label>
               <input {...register("phone")} id="phone" type="tel" autoComplete="tel" placeholder="+0594 XX XX XX" className={inputCls(false)} />
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-[11.5px] font-semibold text-white/30 mb-1.5 uppercase tracking-wider">
+              <label htmlFor="subject" className="block text-[11.5px] font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
                 Sujet *
               </label>
               <input
@@ -140,7 +140,7 @@ export function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-[11.5px] font-semibold text-white/30 mb-1.5 uppercase tracking-wider">
+              <label htmlFor="message" className="block text-[11.5px] font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
                 Message *
               </label>
               <textarea
@@ -166,7 +166,7 @@ export function ContactForm() {
               type="submit"
               disabled={status === "loading"}
               aria-busy={status === "loading"}
-              className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] disabled:opacity-50 disabled:cursor-not-allowed text-[#ffffff] text-[14px] font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] hover:scale-[1.01]"
+              className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] disabled:opacity-50 disabled:cursor-not-allowed text-[#09080c] text-[14px] font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] hover:scale-[1.01]"
             >
               {status === "loading" ? (
                 <><Loader2 className="w-4 h-4 animate-spin" /> Envoi en cours…</>
@@ -176,7 +176,7 @@ export function ContactForm() {
             </button>
 
             {/* Notice RGPD */}
-            <p className="text-[11px] text-white/20 leading-relaxed text-center">
+            <p className="text-[11px] text-white/40 leading-relaxed text-center">
               En soumettant ce formulaire, vos données sont traitées uniquement pour répondre
               à votre demande, conformément au{" "}
               <a href="/cgu" className="underline underline-offset-2 hover:text-white/40 transition-colors">

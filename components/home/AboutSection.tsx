@@ -56,9 +56,9 @@ export function AboutSection() {
               >
                 <span className="text-white">Pas de revendeur.</span>
                 <br />
-                <span className="text-white/40">Tout géré en direct,</span>
+                <span className="text-white/50">Tout géré en direct,</span>
                 <br />
-                <span className="text-white/40">depuis Cayenne.</span>
+                <span className="text-white/50">depuis Cayenne.</span>
               </h2>
 
               {/* Body */}
@@ -89,7 +89,7 @@ export function AboutSection() {
                         className="text-[clamp(2.6rem,4.5vw,4.2rem)] font-bold leading-none tracking-[-0.04em] mb-2.5 tabular-nums"
                         style={{ color: s.color, fontFamily: "var(--font-display)" }}
                       />
-                      <div className="text-[12px] text-white/42 leading-snug">
+                      <div className="text-[12px] text-white/52 leading-snug">
                         {s.label}
                       </div>
                     </div>
@@ -142,7 +142,7 @@ export function AboutSection() {
                   >
                     {p.label}
                   </div>
-                  <p className="text-[13px] text-white/50 leading-relaxed">
+                  <p className="text-[13px] text-white/55 leading-relaxed">
                     {p.detail}
                   </p>
                 </div>

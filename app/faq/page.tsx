@@ -179,13 +179,13 @@ export default function FAQPage() {
             >
               Votre question n&apos;est pas dans la liste ?
             </h3>
-            <p className="text-[13.5px] text-white/35 mb-7">
+            <p className="text-[13.5px] text-white/55 mb-7">
               Nos conseillers sont disponibles 6j/7. Un appel suffit.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:+594594251326"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#f0a050] text-[#ffffff] text-[13.5px] font-bold rounded-full hover:bg-[#f5b060] transition-all hover:shadow-[0_0_24px_rgba(240,160,80,0.35)]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#f0a050] text-[#09080c] text-[13.5px] font-bold rounded-full hover:bg-[#f5b060] transition-all hover:shadow-[0_0_24px_rgba(240,160,80,0.35)]"
               >
                 +0594 25 13 26
               </a>
