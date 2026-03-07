@@ -165,7 +165,7 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/rendez-vous"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-semibold text-[#05080f] bg-[#f0a050] rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_28px_rgba(240,160,80,0.35)] active:scale-[0.98]"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-semibold text-[#05080f] bg-[#f0a050] rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_24px_rgba(240,160,80,0.32)] active:scale-[0.97]"
             >
               Prendre RDV
             </Link>
@@ -226,7 +226,7 @@ export function Navbar() {
             <Link
               href="/rendez-vous"
               onClick={() => setMobileOpen(false)}
-              className="block w-full text-center py-3 bg-[#f0a050] text-[#05080f] text-sm font-bold rounded-full hover:bg-[#f5b060] transition-colors"
+              className="block w-full text-center py-3 bg-[#f0a050] text-[#05080f] text-sm font-bold rounded-full hover:bg-[#f5b060] transition-all duration-200 active:scale-[0.97]"
             >
               Prendre rendez-vous
             </Link>

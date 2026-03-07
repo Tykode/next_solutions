@@ -165,3 +165,16 @@ button, a, [role="button"] {
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* ─── Card hover glow utilities ─────────────────── */
+.card-glow-purple { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease; }
+.card-glow-purple:hover { transform: translateY(-4px); box-shadow: 0 12px 48px rgba(176,122,224,0.18), 0 4px 16px rgba(176,122,224,0.08); }
+
+.card-glow-blue { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease; }
+.card-glow-blue:hover { transform: translateY(-4px); box-shadow: 0 12px 48px rgba(79,142,247,0.18), 0 4px 16px rgba(79,142,247,0.08); }
+
+.card-glow-green { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease; }
+.card-glow-green:hover { transform: translateY(-4px); box-shadow: 0 12px 48px rgba(82,196,138,0.18), 0 4px 16px rgba(82,196,138,0.08); }
+
+.card-glow-pink { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease; }
+.card-glow-pink:hover { transform: translateY(-4px); box-shadow: 0 12px 48px rgba(232,116,138,0.18), 0 4px 16px rgba(232,116,138,0.08); }

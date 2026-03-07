@@ -4,76 +4,88 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
 
 const STATS = [
-  { value: "10+",  label: "ans en Guyane" },
-  { value: "500+", label: "commerces équipés" },
-  { value: "4",    label: "gammes de solutions" },
-  { value: "6j/7", label: "support technique" },
+  { value: "10+",  label: "ans en Guyane",       color: "#f0a050" },
+  { value: "500+", label: "commerces équipés",    color: "#4f8ef7" },
+  { value: "4",    label: "gammes de solutions",  color: "#b07ae0" },
+  { value: "6j/7", label: "support technique",    color: "#52c48a" },
 ];
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-dvh flex flex-col justify-center bg-[var(--c-bg)]">
+    <section className="relative min-h-dvh flex flex-col justify-center bg-[var(--c-bg)] overflow-hidden">
 
-      {/* ── Content ── */}
+      {/* Ambient glows */}
+      <div className="absolute top-1/4 -left-32 w-[700px] h-[500px] bg-[#f0a050]/[0.045] blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 -right-32 w-[500px] h-[400px] bg-[#b07ae0]/[0.03] blur-[110px] rounded-full pointer-events-none" />
+
+      {/* Content */}
       <div className="relative z-10 max-w-[1320px] mx-auto px-5 sm:px-8 pt-32 pb-24">
 
-        {/* Location */}
-        <div className="flex items-center gap-2 text-[#f0a050] text-[12.5px] font-semibold mb-10">
-          <MapPin className="w-3.5 h-3.5" />
-          Cayenne · Guyane française · depuis 2014
+        {/* Location badge */}
+        <div className="animate-fade-up" style={{ animationDelay: "0ms" }}>
+          <div className="inline-flex items-center gap-2 text-[#f0a050] text-[12px] font-semibold mb-10 px-3.5 py-1.5 rounded-full border border-[#f0a050]/[0.22] bg-[#f0a050]/[0.06]">
+            <MapPin className="w-3.5 h-3.5" />
+            Cayenne · Guyane française · depuis 2014
+          </div>
         </div>
 
         {/* Headline */}
-        <h1
-          className="text-[clamp(2.8rem,6vw,5.5rem)] font-bold leading-[1.06] tracking-[-0.03em] text-white max-w-[820px] mb-6"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Spécialiste{" "}
-          <span className="text-[#f0a050]">monétique</span>
-          {" "}en Guyane
-        </h1>
+        <div className="animate-fade-up" style={{ animationDelay: "80ms" }}>
+          <h1
+            className="text-[clamp(2.8rem,6vw,5.5rem)] font-bold leading-[1.06] tracking-[-0.03em] text-white max-w-[820px] mb-6"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Spécialiste{" "}
+            <span className="text-[#f0a050]">monétique</span>
+            {" "}en Guyane
+          </h1>
+        </div>
 
         {/* Subtitle */}
-        <p className="text-[17px] text-white/62 leading-[1.75] max-w-[480px] mb-10">
-          Équipements point de vente éprouvés, déployés et maintenus par
-          notre équipe à Cayenne. Caisses, TPE, logiciels, balances —
-          un seul interlocuteur, une seule hotline.
-        </p>
+        <div className="animate-fade-up" style={{ animationDelay: "160ms" }}>
+          <p className="text-[17px] text-white/62 leading-[1.75] max-w-[480px] mb-10">
+            Équipements point de vente éprouvés, déployés et maintenus par
+            notre équipe à Cayenne. Caisses, TPE, logiciels, balances —
+            un seul interlocuteur, une seule hotline.
+          </p>
+        </div>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-3 mb-20">
+        <div className="animate-fade-up flex flex-wrap gap-3 mb-20" style={{ animationDelay: "240ms" }}>
           <Link
             href="/rendez-vous"
-            className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] text-[#09080c] text-[14px] font-bold rounded-full transition-colors duration-200"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#f0a050] text-[#09080c] text-[14px] font-bold rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] active:scale-[0.97]"
           >
             <CalendarDays className="w-4 h-4" />
             Planifier un rendez-vous
           </Link>
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 px-6 py-3.5 text-[14px] font-medium text-white/65 hover:text-white border border-white/[0.12] hover:border-white/[0.22] rounded-full transition-colors duration-200"
+            className="group inline-flex items-center gap-2 px-6 py-3.5 text-[14px] font-medium text-white/65 hover:text-white border border-white/[0.12] hover:border-white/[0.22] rounded-full transition-all duration-200"
           >
             Notre histoire
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
           </Link>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 border-t border-white/[0.08] pt-8 max-w-[580px]">
-          {STATS.map(({ value, label }, i) => (
-            <div
-              key={label}
-              className={`pr-6 ${i > 0 ? "pl-6 border-l border-white/[0.08]" : ""}`}
-            >
+        <div className="animate-fade-up" style={{ animationDelay: "320ms" }}>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 border-t border-white/[0.08] pt-8 max-w-[580px]">
+            {STATS.map(({ value, label, color }, i) => (
               <div
-                className="text-[2rem] font-bold text-white leading-none mb-1 tracking-[-0.03em]"
-                style={{ fontFamily: "var(--font-display)" }}
+                key={label}
+                className={`pr-6 ${i > 0 ? "pl-6 border-l border-white/[0.08]" : ""}`}
               >
-                {value}
+                <div
+                  className="text-[2rem] font-bold leading-none mb-1 tracking-[-0.03em]"
+                  style={{ color, fontFamily: "var(--font-display)" }}
+                >
+                  {value}
+                </div>
+                <div className="text-[11.5px] text-white/45 leading-snug">{label}</div>
               </div>
-              <div className="text-[11.5px] text-white/45 leading-snug">{label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
