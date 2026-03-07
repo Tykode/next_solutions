@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { ProductCard } from "@/components/products/ProductCard";
 import { ProductInfoBanner } from "@/components/shared/ProductInfoBanner";
+import { ProductPageCTA } from "@/components/shared/ProductPageCTA";
 import { Reveal } from "@/components/shared/Reveal";
 
 export const metadata: Metadata = {
@@ -81,6 +82,8 @@ export default function CaissesPage() {
               </Reveal>
             ))}
           </div>
+
+          <ProductPageCTA accentColor="#b07ae0" />
         </div>
       </section>
     </>
