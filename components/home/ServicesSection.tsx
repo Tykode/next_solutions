@@ -4,6 +4,7 @@ import { Monitor, CreditCard, BarChart3, Scale, ArrowRight } from "lucide-react"
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/shared/Reveal";
+import { SectionDivider } from "@/components/shared/SectionDivider";
 
 const services = [
   {
@@ -55,7 +56,7 @@ const services = [
 export function ServicesSection() {
   return (
     <section className="relative py-24 bg-[var(--c-bg)]">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+      <SectionDivider />
 
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
 

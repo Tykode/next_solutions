@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Reveal } from "@/components/shared/Reveal";
 import { CountUp } from "@/components/shared/CountUp";
+import { SectionDivider } from "@/components/shared/SectionDivider";
 
 const quadStats = [
   { label: "Expertise locale",  value: "10+",  color: "#f0a050" },
@@ -32,7 +33,7 @@ const pillars = [
 export function AboutSection() {
   return (
     <section className="relative py-24 bg-[var(--c-bg)]">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+      <SectionDivider />
 
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CalendarDays, Phone, Mail, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Reveal } from "@/components/shared/Reveal";
+import { SectionDivider } from "@/components/shared/SectionDivider";
 
 const channels = [
   {
@@ -33,7 +34,7 @@ const channels = [
 export function CTASection() {
   return (
     <section className="relative py-24 bg-[var(--c-bg)]">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+      <SectionDivider />
 
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
         <Reveal>

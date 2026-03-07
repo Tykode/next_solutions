@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { ProductCard } from "@/components/products/ProductCard";
+import { ProductInfoBanner } from "@/components/shared/ProductInfoBanner";
 import { Reveal } from "@/components/shared/Reveal";
 
 export const metadata: Metadata = {
@@ -51,24 +52,14 @@ export default function BalancesPage() {
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
 
           {/* Info banner */}
-          <Reveal className="mb-14">
-            <div className="p-6 rounded-2xl bg-[#e8748a]/[0.06] border border-[#e8748a]/15">
-              <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {[
-                  { label: "Marques", value: "Mettler Toledo · Precia Molen" },
-                  { label: "Usage", value: "Marché · Caisse · Comptoir" },
-                  { label: "Certification", value: "Homologation métrologie légale" },
-                ].map(({ label, value }) => (
-                  <div key={label} className="text-center">
-                    <dt className="text-[10.5px] font-semibold text-white/50 uppercase tracking-[0.12em] mb-1.5">
-                      {label}
-                    </dt>
-                    <dd className="text-[clamp(1.1rem,2vw,1.6rem)] font-bold text-white tracking-[-0.02em]">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </Reveal>
+          <ProductInfoBanner
+            accentColor="#e8748a"
+            stats={[
+              { label: "Marques", value: "Mettler Toledo · Precia Molen" },
+              { label: "Usage", value: "Marché · Caisse · Comptoir" },
+              { label: "Certification", value: "Homologation métrologie légale" },
+            ]}
+          />
 
           {/* Products grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
