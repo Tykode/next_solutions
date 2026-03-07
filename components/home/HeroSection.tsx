@@ -86,7 +86,7 @@ export function HeroSection() {
               >
                 <CountUp
                   value={value}
-                  className="text-[1.85rem] sm:text-[2rem] font-bold leading-none mb-1 tracking-[-0.03em]"
+                  className="text-[2rem] sm:text-[2.6rem] font-bold leading-none mb-1 tracking-[-0.04em]"
                   style={{ color, fontFamily: "var(--font-display)" }}
                 />
                 <div className="text-[11px] sm:text-[11.5px] text-white/45 leading-snug">{label}</div>

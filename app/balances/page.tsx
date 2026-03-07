@@ -53,7 +53,7 @@ export default function BalancesPage() {
           {/* Info banner */}
           <Reveal className="mb-14">
             <div className="p-6 rounded-2xl bg-[#e8748a]/[0.06] border border-[#e8748a]/15">
-              <dl className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   { label: "Marques", value: "Mettler Toledo · Precia Molen" },
                   { label: "Usage", value: "Marché · Caisse · Comptoir" },
@@ -74,7 +74,7 @@ export default function BalancesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product, i) => (
               <Reveal key={product.name} delay={i * 75} className="h-full">
-                <ProductCard {...product} accentColor="#e8748a" className="h-full" />
+                <ProductCard {...product} accentColor="#e8748a" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="h-full" />
               </Reveal>
             ))}
           </div>

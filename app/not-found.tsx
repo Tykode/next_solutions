@@ -5,14 +5,14 @@ export default function NotFound() {
     <div className="min-h-dvh flex items-center justify-center bg-[var(--c-bg)] px-5">
       <div className="text-center max-w-md">
         <p
-          className="text-[7rem] font-bold text-white/[0.04] leading-none tracking-[-0.05em] mb-4 select-none"
+          className="text-[10rem] font-bold text-white/[0.06] leading-none tracking-[-0.06em] mb-4 select-none"
           style={{ fontFamily: "var(--font-display)" }}
           aria-hidden="true"
         >
           404
         </p>
         <h1
-          className="text-[1.6rem] font-bold text-white mb-3 tracking-[-0.025em] -mt-8"
+          className="text-[2rem] font-bold text-white mb-3 tracking-[-0.03em] -mt-10"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Page introuvable

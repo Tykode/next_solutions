@@ -71,7 +71,7 @@ export default function RejoindrePage() {
                   >
                     {title}
                   </h3>
-                  <p className="text-[13px] text-white/45 leading-relaxed">{desc}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{desc}</p>
                 </div>
               </Reveal>
             ))}
