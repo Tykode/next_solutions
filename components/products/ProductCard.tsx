@@ -2,6 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import type { CSSProperties } from "react";
 
 interface ProductCardProps {
   name: string;
@@ -21,8 +22,17 @@ export function ProductCard({
   className,
 }: ProductCardProps) {
   return (
-    <article className={cn("group", className)}>
-      <Card className="h-full overflow-hidden hover:border-white/[0.16] transition-colors duration-200 hover:bg-[var(--c-card)]">
+    <article
+      className={cn("group", className)}
+      style={{ "--card-glow": `${accentColor}22` } as CSSProperties}
+    >
+      <Card className="h-full overflow-hidden relative hover:border-white/[0.16] hover:-translate-y-1 hover:shadow-[0_12px_48px_var(--card-glow)] transition-all duration-300 hover:bg-[var(--c-card)]">
+
+        {/* Colored top accent — reveals on hover */}
+        <div
+          className="absolute top-0 inset-x-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+          style={{ background: accentColor }}
+        />
 
         {/* Image */}
         <div className="relative h-52 bg-[var(--c-card)] overflow-hidden border-b border-white/[0.06]">
@@ -30,7 +40,7 @@ export function ProductCard({
             src={imageSrc}
             alt={name}
             fill
-            className="object-contain p-6"
+            className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         </div>
@@ -47,7 +57,6 @@ export function ProductCard({
             {description}
           </p>
 
-          {/* Disponibilité */}
           <Badge variant={badgeVariant} className="self-start mt-1">
             <span
               className="w-1.5 h-1.5 rounded-full"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { Users, TrendingUp, Heart, Zap } from "lucide-react";
+import { Reveal } from "@/components/shared/Reveal";
 
 export const metadata: Metadata = {
   title: "Rejoignez-nous",
@@ -13,25 +14,25 @@ const perks = [
     Icon: TrendingUp,
     title: "Évolution rapide",
     desc: "Le marché des solutions monétiques est en plein essor. Montez en compétences vite, évoluez avec l'entreprise — Next Solutions grandit avec ceux qui s'investissent.",
-    color: "#F89851",
+    color: "#f0a050",
   },
   {
     Icon: Heart,
     title: "Structure à taille humaine",
     desc: "Six personnes, zéro bureaucratie. Les décisions se prennent vite, chacun est responsable de son périmètre et l'entraide est la norme.",
-    color: "#d16b86",
+    color: "#e8748a",
   },
   {
     Icon: Zap,
     title: "Matériel certifié, logiciels Cloud",
     desc: "Terminaux Ingenico, caisses AURES, logiciels WaveSoft et Kwisatz — vous intervenez sur les équipements réels qu'utilisent les commerces guyanais au quotidien.",
-    color: "#3f78e0",
+    color: "#4f8ef7",
   },
   {
     Icon: Users,
     title: "Impact local",
     desc: "Chaque commerce équipé, c'est une famille qui gagne du temps. Votre travail a un impact direct et visible sur l'économie locale.",
-    color: "#7cb798",
+    color: "#52c48a",
   },
 ];
 
@@ -43,46 +44,59 @@ export default function RejoindrePage() {
         subtitle="Six personnes, un atelier à Cayenne, 500 clients à équiper et maintenir. Si vous aimez la technique et le terrain, on a quelque chose pour vous."
         badge="Recrutement"
         breadcrumbs={[{ label: "Rejoignez-nous", href: "/rejoindre" }]}
-        accentColor="#a07cc5"
+        accentColor="#b07ae0"
       />
 
       <section className="py-20 bg-[var(--c-bg)]">
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
+
           {/* Perks */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-            {perks.map(({ Icon, title, desc, color }) => (
-              <div
-                key={title}
-                className="p-6 rounded-3xl border border-white/[0.07] bg-white/[0.03] hover:shadow-md transition-shadow text-center"
-              >
+            {perks.map(({ Icon, title, desc, color }, i) => (
+              <Reveal key={title} delay={i * 80}>
                 <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4"
-                  style={{ background: `${color}15` }}
+                  className="group p-6 rounded-2xl border border-white/[0.07] bg-white/[0.03] hover:border-white/[0.14] hover:-translate-y-1 transition-all duration-300 h-full"
+                  style={{ "--card-glow": `${color}20` } as React.CSSProperties}
                 >
-                  <Icon className="w-6 h-6" style={{ color }} />
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-transform duration-200 group-hover:scale-110"
+                    style={{ background: `${color}15` }}
+                  >
+                    <Icon className="w-5 h-5" style={{ color }} />
+                  </div>
+                  <h3
+                    className="text-[15px] font-bold text-white/85 group-hover:text-white mb-2 transition-colors"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {title}
+                  </h3>
+                  <p className="text-[13px] text-white/45 leading-relaxed">{desc}</p>
                 </div>
-                <h3 className="font-bold text-white/80 mb-2">{title}</h3>
-                <p className="text-sm text-white/35 leading-relaxed">{desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
 
-          {/* Monday.com form embed */}
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-white/80 text-center mb-8">
-              Envoyez-nous votre candidature
-            </h2>
-            <div className="rounded-3xl overflow-hidden border border-white/[0.07] shadow-lg">
-              <iframe
-                src="https://forms.monday.com/forms/embed/4bc0b75bac2abcdd30e2fbebeab2afcc?r=use1"
-                width="100%"
-                height="600"
-                style={{ border: 0 }}
-                title="Formulaire de candidature – Next Solutions"
-                loading="lazy"
-              />
+          {/* Application form */}
+          <Reveal>
+            <div className="max-w-3xl mx-auto">
+              <h2
+                className="text-[clamp(1.6rem,3vw,2.2rem)] font-bold text-white mb-8"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Envoyez-nous votre candidature
+              </h2>
+              <div className="rounded-2xl overflow-hidden border border-white/[0.07]">
+                <iframe
+                  src="https://forms.monday.com/forms/embed/4bc0b75bac2abcdd30e2fbebeab2afcc?r=use1"
+                  width="100%"
+                  height="600"
+                  style={{ border: 0 }}
+                  title="Formulaire de candidature – Next Solutions"
+                  loading="lazy"
+                />
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

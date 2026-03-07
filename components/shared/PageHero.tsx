@@ -23,11 +23,11 @@ export function PageHero({
   return (
     <section className={cn("relative pt-36 pb-20 overflow-hidden bg-[var(--c-bg)]", className)}>
 
-      {/* Glow doux */}
+      {/* Glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse 65% 45% at 50% -5%, ${accentColor}0a, transparent)`,
+          background: `radial-gradient(ellipse 65% 45% at 50% -5%, ${accentColor}0c, transparent)`,
         }}
       />
 
@@ -36,7 +36,8 @@ export function PageHero({
         {/* Breadcrumbs */}
         {breadcrumbs && (
           <nav
-            className="flex items-center gap-1 text-[12px] text-white/38 mb-8 font-medium"
+            className="flex items-center gap-1 text-[12px] text-white/38 mb-8 font-medium animate-fade-up"
+            style={{ animationDelay: "0ms" }}
           >
             <Link href="/" className="hover:text-white/65 transition-colors flex items-center gap-1">
               <Home className="w-3 h-3" />
@@ -54,7 +55,10 @@ export function PageHero({
 
         {/* Badge */}
         {badge && (
-          <div className="mb-5">
+          <div
+            className="mb-5 animate-fade-up"
+            style={{ animationDelay: "40ms" }}
+          >
             <Badge
               style={{
                 background: `${accentColor}12`,
@@ -71,15 +75,18 @@ export function PageHero({
 
         {/* Title */}
         <h1
-          className="text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-[1.08] tracking-[-0.03em] max-w-3xl mb-5"
-          style={{ fontFamily: "var(--font-display)" }}
+          className="text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-[1.08] tracking-[-0.03em] max-w-3xl mb-5 animate-fade-up"
+          style={{ fontFamily: "var(--font-display)", animationDelay: "100ms" }}
         >
           {title}
         </h1>
 
         {/* Subtitle */}
         {subtitle && (
-          <p className="text-[15px] text-white/60 max-w-xl leading-relaxed">
+          <p
+            className="text-[15px] text-white/60 max-w-xl leading-relaxed animate-fade-up"
+            style={{ animationDelay: "180ms" }}
+          >
             {subtitle}
           </p>
         )}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { ProductCard } from "@/components/products/ProductCard";
+import { Reveal } from "@/components/shared/Reveal";
 
 export const metadata: Metadata = {
   title: "Balances",
@@ -48,32 +49,33 @@ export default function BalancesPage() {
 
       <section className="py-20 bg-[var(--c-bg)]">
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
+
           {/* Info banner */}
-          <div className="mb-14 p-6 rounded-2xl bg-[#e8748a]/[0.06] border border-[#e8748a]/15">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { label: "Marques", value: "Mettler Toledo · Precia Molen" },
-                { label: "Usage", value: "Marché · Caisse · Comptoir" },
-                { label: "Certification", value: "Homologation métrologie légale" },
-              ].map(({ label, value }) => (
-                <div key={label} className="text-center">
-                  <div className="text-[10.5px] font-semibold text-white/25 uppercase tracking-[0.12em] mb-1.5">
-                    {label}
+          <Reveal className="mb-14">
+            <div className="p-6 rounded-2xl bg-[#e8748a]/[0.06] border border-[#e8748a]/15">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  { label: "Marques", value: "Mettler Toledo · Precia Molen" },
+                  { label: "Usage", value: "Marché · Caisse · Comptoir" },
+                  { label: "Certification", value: "Homologation métrologie légale" },
+                ].map(({ label, value }) => (
+                  <div key={label} className="text-center">
+                    <div className="text-[10.5px] font-semibold text-white/25 uppercase tracking-[0.12em] mb-1.5">
+                      {label}
+                    </div>
+                    <div className="text-[15px] font-bold text-white/75">{value}</div>
                   </div>
-                  <div className="text-[15px] font-bold text-white/75">{value}</div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Products grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product, i) => (
-              <ProductCard
-                key={product.name}
-                {...product}
-                accentColor="#e8748a"
-              />
+              <Reveal key={product.name} delay={i * 75} className="h-full">
+                <ProductCard {...product} accentColor="#e8748a" className="h-full" />
+              </Reveal>
             ))}
           </div>
         </div>

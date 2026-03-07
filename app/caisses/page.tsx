@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { ProductCard } from "@/components/products/ProductCard";
+import { Reveal } from "@/components/shared/Reveal";
 
 export const metadata: Metadata = {
   title: "Caisses Tactiles",
@@ -60,32 +61,33 @@ export default function CaissesPage() {
 
       <section className="py-20 bg-[var(--c-bg)]">
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
+
           {/* Info banner */}
-          <div className="mb-14 p-6 rounded-2xl bg-[#b07ae0]/[0.06] border border-[#b07ae0]/15">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { label: "Systèmes", value: "Android & Windows" },
-                { label: "Usage", value: "Retail · Restauration · Surfaces alim." },
-                { label: "Marque", value: "AURES Technologies" },
-              ].map(({ label, value }) => (
-                <div key={label} className="text-center">
-                  <div className="text-[10.5px] font-semibold text-white/25 uppercase tracking-[0.12em] mb-1.5">
-                    {label}
+          <Reveal className="mb-14">
+            <div className="p-6 rounded-2xl bg-[#b07ae0]/[0.06] border border-[#b07ae0]/15">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  { label: "Systèmes", value: "Android & Windows" },
+                  { label: "Usage", value: "Retail · Restauration · Surfaces alim." },
+                  { label: "Marque", value: "AURES Technologies" },
+                ].map(({ label, value }) => (
+                  <div key={label} className="text-center">
+                    <div className="text-[10.5px] font-semibold text-white/25 uppercase tracking-[0.12em] mb-1.5">
+                      {label}
+                    </div>
+                    <div className="text-[15px] font-bold text-white/75">{value}</div>
                   </div>
-                  <div className="text-[15px] font-bold text-white/75">{value}</div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Products grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, i) => (
-              <ProductCard
-                key={product.name}
-                {...product}
-                accentColor="#b07ae0"
-              />
+              <Reveal key={product.name} delay={i * 70} className="h-full">
+                <ProductCard {...product} accentColor="#b07ae0" className="h-full" />
+              </Reveal>
             ))}
           </div>
         </div>
