@@ -42,7 +42,7 @@ export function ProductCard({
             src={imageSrc}
             alt={`${name} — équipement point de vente Next Solutions`}
             fill
-            className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+            className="object-contain p-6 transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
             sizes={sizes}
           />
         </div>

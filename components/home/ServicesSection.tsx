@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { Monitor, CreditCard, BarChart3, Scale, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -96,8 +97,8 @@ export function ServicesSection() {
 
                     {/* Icon */}
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 shrink-0 transition-transform duration-200 group-hover:scale-110"
-                      style={{ background: `${s.color}18` }}
+                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 shrink-0 transition-all duration-200 group-hover:scale-110 group-hover:shadow-[0_0_16px_var(--icon-glow)]"
+                      style={{ background: `${s.color}18`, "--icon-glow": `${s.color}40` } as CSSProperties}
                     >
                       <Icon className="w-5 h-5" style={{ color: s.color }} />
                     </div>

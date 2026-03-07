@@ -32,7 +32,23 @@
     0%   { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
   }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-14px); }
+  }
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.45; }
+    50%       { transform: translateY(6px); opacity: 0.85; }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.55; transform: scale(0.75); }
+  }
 
+  --animate-float:          float 6s ease-in-out infinite;
+  --animate-float-slow:     float 9s ease-in-out infinite;
+  --animate-scroll-bounce:  scroll-bounce 1.8s ease-in-out infinite;
+  --animate-pulse-dot:      pulse-dot 2s ease-in-out infinite;
   --animate-slide-down: slide-down 0.4s cubic-bezier(0.16,1,0.3,1) both;
 
   --color-bg:      #09080c;

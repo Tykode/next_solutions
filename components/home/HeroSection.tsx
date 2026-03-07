@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
+import { ArrowRight, CalendarDays, ChevronDown } from "lucide-react";
 import { CountUp } from "@/components/shared/CountUp";
 
 const STATS = [
@@ -15,9 +15,9 @@ export function HeroSection() {
   return (
     <section className="relative min-h-dvh flex flex-col justify-center bg-[var(--c-bg)] overflow-hidden">
 
-      {/* Ambient glows */}
-      <div className="absolute top-1/4 -left-32 w-[700px] h-[500px] bg-[#f0a050]/[0.045] blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 -right-32 w-[500px] h-[400px] bg-[#b07ae0]/[0.03] blur-[110px] rounded-full pointer-events-none" />
+      {/* Ambient glows — subtle breathing motion */}
+      <div className="absolute top-1/4 -left-32 w-[700px] h-[500px] bg-[#f0a050]/[0.045] blur-[130px] rounded-full pointer-events-none animate-[float_8s_ease-in-out_infinite]" />
+      <div className="absolute top-1/3 -right-32 w-[500px] h-[400px] bg-[#b07ae0]/[0.03] blur-[110px] rounded-full pointer-events-none animate-[float_11s_ease-in-out_3s_infinite]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-[1320px] mx-auto px-5 sm:px-8 pt-32 pb-24">
@@ -25,7 +25,10 @@ export function HeroSection() {
         {/* Location badge */}
         <div className="animate-fade-up" style={{ animationDelay: "0ms" }}>
           <div className="inline-flex items-center gap-2 text-[#f0a050] text-[12px] font-semibold mb-10 px-3.5 py-1.5 rounded-full border border-[#f0a050]/[0.22] bg-[#f0a050]/[0.06]">
-            <MapPin className="w-3.5 h-3.5" />
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f0a050] opacity-50" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f0a050]" />
+            </span>
             Cayenne · Guyane française · depuis 2014
           </div>
         </div>
@@ -91,6 +94,12 @@ export function HeroSection() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none animate-fade-in" style={{ animationDelay: "600ms" }}>
+        <span className="text-[10px] font-semibold text-white/25 uppercase tracking-[0.14em]">Défiler</span>
+        <ChevronDown className="w-4 h-4 text-white/30 animate-[scroll-bounce_1.8s_ease-in-out_infinite]" aria-hidden="true" />
       </div>
 
       <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[var(--c-bg)] to-transparent pointer-events-none" />
