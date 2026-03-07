@@ -53,7 +53,7 @@ export default function TPEPage() {
           {/* Info banner */}
           <Reveal className="mb-14">
             <div className="p-6 rounded-2xl bg-[#52c48a]/[0.06] border border-[#52c48a]/15">
-              <dl className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   { label: "Connectivité", value: "IP · GSM · Wi-Fi · RTC" },
                   { label: "Disponibilité", value: "Vente & Location" },

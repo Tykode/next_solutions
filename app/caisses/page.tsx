@@ -65,7 +65,7 @@ export default function CaissesPage() {
           {/* Info banner */}
           <Reveal className="mb-14">
             <div className="p-6 rounded-2xl bg-[#b07ae0]/[0.06] border border-[#b07ae0]/15">
-              <dl className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   { label: "Systèmes", value: "Android & Windows" },
                   { label: "Usage", value: "Retail · Restauration · Surfaces alim." },

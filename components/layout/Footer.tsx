@@ -61,7 +61,7 @@ export function Footer() {
       </div>
 
       {/* Main grid */}
-      <div className="max-w-[1320px] mx-auto px-5 sm:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
+      <div className="max-w-[1320px] mx-auto px-5 sm:px-8 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
 
         {/* Brand col */}
         <div className="lg:col-span-2 space-y-5">
@@ -113,7 +113,7 @@ export function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-[13.5px] text-white/55 hover:text-white/85 transition-colors"
+                    className="inline-flex items-center min-h-[44px] text-[13.5px] text-white/55 hover:text-white/85 transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -138,7 +138,7 @@ export function Footer() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[12px] text-white/40 hover:text-white/65 transition-colors"
+                className="inline-flex items-center min-h-[44px] text-[12px] text-white/40 hover:text-white/65 transition-colors"
               >
                 {l.label}
               </Link>

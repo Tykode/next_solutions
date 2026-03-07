@@ -15,7 +15,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <div className="w-8 h-8" />;
+  if (!mounted) return <div className="w-[44px] h-[44px]" />;
 
   const isDark = theme === "dark";
 
@@ -24,7 +24,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
       className={cn(
-        "relative p-2 rounded-xl transition-all duration-200",
+        "relative min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl transition-all duration-200",
         "text-white/45 hover:text-white/90 hover:bg-white/[0.07]",
         className
       )}

@@ -53,7 +53,7 @@ export default function LogicielsPage() {
           {/* Info banner */}
           <Reveal className="mb-14">
             <div className="p-6 rounded-2xl bg-[#4f8ef7]/[0.06] border border-[#4f8ef7]/15">
-              <dl className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   { label: "Gamme", value: "Simple POS · Multi-magasins" },
                   { label: "Compatibilité", value: "Windows · Android · Cloud" },

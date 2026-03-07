@@ -92,7 +92,7 @@ export function Navbar() {
                 onClick={() => setProductsOpen(!productsOpen)}
                 onFocus={() => setProductsOpen(true)}
                 className={cn(
-                  "flex items-center gap-1 px-3.5 py-2 text-[13.5px] font-medium tracking-[-0.01em] rounded-lg transition-all",
+                  "flex items-center gap-1 px-3.5 py-2 min-h-[44px] text-[13.5px] font-medium tracking-[-0.01em] rounded-lg transition-all",
                   productsOpen
                     ? "text-white bg-white/[0.08]"
                     : "text-white/55 hover:text-white/90 hover:bg-white/[0.06]"
@@ -155,7 +155,7 @@ export function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="px-3.5 py-2 text-[13.5px] font-medium tracking-[-0.01em] text-white/55 hover:text-white/90 hover:bg-white/[0.06] rounded-lg transition-all"
+                className="flex items-center px-3.5 py-2 min-h-[44px] text-[13.5px] font-medium tracking-[-0.01em] text-white/55 hover:text-white/90 hover:bg-white/[0.06] rounded-lg transition-all"
               >
                 {l.label}
               </Link>
@@ -181,7 +181,7 @@ export function Navbar() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
               aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
-              className="p-2 rounded-xl text-white/60 hover:text-white hover:bg-white/[0.07] transition-all"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-white/60 hover:text-white hover:bg-white/[0.07] transition-all"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
