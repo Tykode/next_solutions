@@ -58,6 +58,9 @@ export default function ContactPage() {
             {/* Left: contact info */}
             <div className="lg:col-span-2 space-y-3">
               <Reveal>
+                <p className="text-[11px] font-semibold text-[#f0a050]/70 uppercase tracking-[0.15em] mb-3">
+                  Nos coordonnées
+                </p>
                 <h2
                   className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-white leading-[1.06] tracking-[-0.03em] mb-4"
                   style={{ fontFamily: "var(--font-display)" }}
@@ -76,7 +79,7 @@ export default function ContactPage() {
                       <Icon className="w-4 h-4" style={{ color }} />
                     </div>
                     <div>
-                      <div className="text-[11.5px] font-semibold text-white/38 mb-0.5 uppercase tracking-[0.1em]">
+                      <div className="text-[11.5px] font-semibold text-white/50 mb-0.5 uppercase tracking-[0.1em]">
                         {title}
                       </div>
                       {lines.map((line, j) =>
@@ -86,12 +89,12 @@ export default function ContactPage() {
                             href={href}
                             target={href.startsWith("http") ? "_blank" : undefined}
                             rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                            className="block text-[14px] text-white/65 hover:text-[#f0a050] transition-colors min-h-[24px]"
+                            className="block text-[14px] text-white/70 hover:text-[#f0a050] transition-colors min-h-[24px]"
                           >
                             {line}
                           </a>
                         ) : (
-                          <p key={line} className="text-[13.5px] text-white/42">
+                          <p key={line} className="text-[13.5px] text-white/55">
                             {line}
                           </p>
                         )
