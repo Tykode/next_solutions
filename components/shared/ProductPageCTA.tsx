@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { CalendarDays, Phone } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
@@ -45,8 +46,8 @@ export function ProductPageCTA({ accentColor = "#f0a050" }: ProductPageCTAProps)
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/rendez-vous"
-              className="btn-shimmer inline-flex items-center justify-center gap-2 px-6 py-3.5 font-bold text-[13.5px] rounded-full text-[#09080c] transition-all duration-200 hover:brightness-105 hover:shadow-[0_0_24px_rgba(0,0,0,0.2)] active:scale-[0.97]"
-              style={{ background: accentColor }}
+              className="btn-shimmer inline-flex items-center justify-center gap-2 px-6 py-3.5 font-bold text-[13.5px] rounded-full text-[#09080c] transition-all duration-200 hover:brightness-105 hover:shadow-[0_0_28px_var(--cta-glow)] active:scale-[0.97]"
+              style={{ background: accentColor, "--cta-glow": `${accentColor}55` } as CSSProperties}
             >
               <CalendarDays className="w-4 h-4" />
               Planifier un rendez-vous
