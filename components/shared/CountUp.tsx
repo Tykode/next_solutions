@@ -26,6 +26,9 @@ export function CountUp({ value, style, className }: CountUpProps) {
     const el = ref.current;
     if (!el) return;
 
+    // Skip count-up animation if user prefers reduced motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || ran.current) return;

@@ -65,20 +65,20 @@ export default function CaissesPage() {
           {/* Info banner */}
           <Reveal className="mb-14">
             <div className="p-6 rounded-2xl bg-[#b07ae0]/[0.06] border border-[#b07ae0]/15">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <dl className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   { label: "Systèmes", value: "Android & Windows" },
                   { label: "Usage", value: "Retail · Restauration · Surfaces alim." },
                   { label: "Marque", value: "AURES Technologies" },
                 ].map(({ label, value }) => (
                   <div key={label} className="text-center">
-                    <div className="text-[10.5px] font-semibold text-white/25 uppercase tracking-[0.12em] mb-1.5">
+                    <dt className="text-[10.5px] font-semibold text-white/50 uppercase tracking-[0.12em] mb-1.5">
                       {label}
-                    </div>
-                    <div className="text-[clamp(1.1rem,2vw,1.6rem)] font-bold text-white tracking-[-0.02em]">{value}</div>
+                    </dt>
+                    <dd className="text-[clamp(1.1rem,2vw,1.6rem)] font-bold text-white tracking-[-0.02em]">{value}</dd>
                   </div>
                 ))}
-              </div>
+              </dl>
             </div>
           </Reveal>
 

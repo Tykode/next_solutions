@@ -179,7 +179,7 @@ export function ContactForm() {
             <p className="text-[11px] text-white/20 leading-relaxed text-center">
               En soumettant ce formulaire, vos données sont traitées uniquement pour répondre
               à votre demande, conformément au{" "}
-              <a href="/cgv" className="underline underline-offset-2 hover:text-white/40 transition-colors">
+              <a href="/cgu" className="underline underline-offset-2 hover:text-white/40 transition-colors">
                 RGPD
               </a>
               . Droit d&apos;accès, rectification et suppression sur demande.

@@ -90,6 +90,7 @@ export function Navbar() {
                 aria-haspopup="true"
                 aria-controls="products-dropdown"
                 onClick={() => setProductsOpen(!productsOpen)}
+                onFocus={() => setProductsOpen(true)}
                 className={cn(
                   "flex items-center gap-1 px-3.5 py-2 text-[13.5px] font-medium tracking-[-0.01em] rounded-lg transition-all",
                   productsOpen
@@ -128,6 +129,7 @@ export function Navbar() {
                     <Link
                       key={p.href}
                       href={p.href}
+                      role="menuitem"
                       className="group flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.06] transition-colors"
                     >
                       <span
@@ -190,6 +192,7 @@ export function Navbar() {
       {/* ─── Mobile drawer — CSS transition, no framer-motion ─── */}
       <div
         id="mobile-nav"
+        aria-hidden={!mobileOpen}
         className={cn(
           "lg:hidden overflow-hidden backdrop-blur-2xl border-t border-white/[0.06] transition-all duration-200 ease-out",
           mobileOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"

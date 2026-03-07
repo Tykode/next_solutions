@@ -106,8 +106,9 @@ export function AboutSection() {
               <div className="absolute inset-4 bg-[#f0a050]/[0.07] blur-[64px] rounded-full" />
               <Image
                 src="/images/caisse tactile/aer-store.png"
-                alt="Caisse tactile AURES — Next Solutions"
+                alt="Caisse tactile AURES Aer Store — Next Solutions Guyane"
                 fill
+                priority
                 className="object-contain relative z-10"
                 style={{ filter: "drop-shadow(0 20px 48px rgba(0,0,0,0.5))" }}
               />

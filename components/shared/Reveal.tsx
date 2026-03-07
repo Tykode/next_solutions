@@ -15,6 +15,14 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
     const el = ref.current;
     if (!el) return;
 
+    // Skip animation if user prefers reduced motion
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

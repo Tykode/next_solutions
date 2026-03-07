@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     category: "Questions commerciales",
-    color: "#F89851",
+    color: "#f0a050",
     items: [
       {
         q: "Proposez-vous des locations flexibles ou saisonnières de TPE ?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     category: "Questions techniques",
-    color: "#3f78e0",
+    color: "#4f8ef7",
     items: [
       {
         q: "Avez-vous une hotline technique ?",
@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     category: "Retours et Échanges",
-    color: "#7cb798",
+    color: "#52c48a",
     items: [
       {
         q: "Quelle est la politique de retour ?",
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     category: "Service Client",
-    color: "#a07cc5",
+    color: "#b07ae0",
     items: [
       {
         q: "Quel est le délai de réponse à mes demandes ?",
@@ -81,12 +81,17 @@ const faqs = [
   },
 ];
 
-function FAQItem({ q, a, color }: { q: string; a: string; color: string }) {
+function FAQItem({ q, a, color, id }: { q: string; a: string; color: string; id: string }) {
   const [open, setOpen] = useState(false);
+  const panelId = `faq-panel-${id}`;
+  const buttonId = `faq-btn-${id}`;
 
   return (
     <div className="rounded-2xl overflow-hidden border border-white/[0.07] bg-white/[0.025]">
       <button
+        id={buttonId}
+        aria-expanded={open}
+        aria-controls={panelId}
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-4 p-5 text-left hover:bg-white/[0.04] transition-colors"
       >
@@ -94,6 +99,7 @@ function FAQItem({ q, a, color }: { q: string; a: string; color: string }) {
           {q}
         </span>
         <ChevronDown
+          aria-hidden="true"
           className={cn(
             "w-4.5 h-4.5 shrink-0 mt-0.5 transition-transform duration-200",
             open ? "rotate-180" : ""
@@ -104,6 +110,9 @@ function FAQItem({ q, a, color }: { q: string; a: string; color: string }) {
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -111,7 +120,7 @@ function FAQItem({ q, a, color }: { q: string; a: string; color: string }) {
             className="overflow-hidden"
           >
             <div
-              className="px-5 pb-5 text-[13.5px] text-white/38 leading-relaxed border-t"
+              className="px-5 pb-5 text-[13.5px] text-white/50 leading-relaxed border-t"
               style={{ borderColor: `${color}20` }}
             >
               <div className="pt-4">{a}</div>
@@ -148,8 +157,13 @@ export default function FAQPage() {
                   </h2>
                 </div>
                 <div className="space-y-2.5">
-                  {section.items.map((item) => (
-                    <FAQItem key={item.q} {...item} color={section.color} />
+                  {section.items.map((item, j) => (
+                    <FAQItem
+                      key={item.q}
+                      {...item}
+                      color={section.color}
+                      id={`${section.category.replace(/\s+/g, "-").toLowerCase()}-${j}`}
+                    />
                   ))}
                 </div>
               </div>
@@ -157,7 +171,7 @@ export default function FAQPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 text-center p-10 rounded-2xl glass">
+          <div className="relative mt-16 text-center p-10 rounded-2xl glass">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(240,160,80,0.06),transparent)] pointer-events-none rounded-2xl" />
             <h3
               className="text-[clamp(1.3rem,2.5vw,1.8rem)] font-bold text-white tracking-[-0.02em] mb-2"

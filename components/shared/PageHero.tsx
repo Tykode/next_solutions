@@ -36,16 +36,21 @@ export function PageHero({
         {/* Breadcrumbs */}
         {breadcrumbs && (
           <nav
+            aria-label="Fil d'Ariane"
             className="flex items-center gap-1 text-[12px] text-white/38 mb-8 font-medium animate-fade-up"
             style={{ animationDelay: "0ms" }}
           >
-            <Link href="/" className="hover:text-white/65 transition-colors flex items-center gap-1">
-              <Home className="w-3 h-3" />
+            <Link href="/" aria-label="Accueil" className="hover:text-white/65 transition-colors flex items-center gap-1">
+              <Home className="w-3 h-3" aria-hidden="true" />
             </Link>
-            {breadcrumbs.map((crumb) => (
+            {breadcrumbs.map((crumb, i) => (
               <span key={crumb.href} className="flex items-center gap-1">
-                <ChevronRight className="w-3 h-3 opacity-40" />
-                <Link href={crumb.href} className="hover:text-white/65 transition-colors">
+                <ChevronRight className="w-3 h-3 opacity-40" aria-hidden="true" />
+                <Link
+                  href={crumb.href}
+                  className="hover:text-white/65 transition-colors"
+                  aria-current={i === breadcrumbs.length - 1 ? "page" : undefined}
+                >
                   {crumb.label}
                 </Link>
               </span>
