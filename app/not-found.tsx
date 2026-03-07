@@ -17,8 +17,11 @@ export default function NotFound() {
         >
           Page introuvable
         </h1>
-        <p className="text-[14px] text-white/55 mb-8 leading-relaxed">
+        <p className="text-[14px] text-white/55 mb-2 leading-relaxed">
           Cette page n&apos;existe pas ou a été déplacée.
+        </p>
+        <p className="text-[13px] text-white/30 mb-8 leading-relaxed">
+          Notre équipe est disponible au 0594 25 13 26 si vous cherchez quelque chose de précis.
         </p>
         <Link
           href="/"

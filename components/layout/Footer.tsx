@@ -129,6 +129,7 @@ export function Footer() {
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px] text-white/40">
             © {new Date().getFullYear()} Next Solutions — SIRET 52217524900021
+            <span className="hidden sm:inline text-white/20"> · Conçu à Cayenne, Guyane</span>
           </p>
           <div className="flex gap-5">
             {[

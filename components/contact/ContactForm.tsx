@@ -57,10 +57,13 @@ export function ContactForm() {
               className="text-[17px] font-bold text-white mb-2"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Bien reçu !
+              Message envoyé — merci !
             </h4>
-            <p className="text-[13px] text-white/55 mb-6 max-w-xs">
+            <p className="text-[13px] text-white/55 mb-1 max-w-xs">
               Votre message est entre de bonnes mains. On revient vers vous sous 24h ouvrées — souvent bien avant.
+            </p>
+            <p className="text-[12px] text-white/30 mb-6">
+              Besoin urgent ? Appelez le 0594 25 13 26.
             </p>
             <button
               onClick={() => setStatus("idle")}
