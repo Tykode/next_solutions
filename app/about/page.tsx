@@ -49,11 +49,14 @@ export default function AboutPage() {
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
 
           <Reveal className="mb-14">
+            <p className="text-[11px] font-semibold text-[#f0a050]/70 uppercase tracking-[0.15em] mb-3">
+              Nos engagements
+            </p>
             <h2
               className="text-[clamp(2.4rem,5.5vw,4.5rem)] font-bold text-white leading-[1.04] tracking-[-0.03em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Ce qui nous distingue
+              Ce qui nous <span className="text-[#f0a050]">distingue</span>
             </h2>
           </Reveal>
 

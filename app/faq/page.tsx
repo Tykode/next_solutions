@@ -144,10 +144,10 @@ export default function FAQPage() {
             {faqs.map((section) => (
               <div key={section.category}>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-3 h-3 rounded-full" style={{ background: section.color }} />
+                  <div className="w-3 h-3 rounded-full shrink-0" style={{ background: section.color }} />
                   <h2
-                    className="text-[clamp(1.1rem,2.5vw,1.5rem)] font-bold text-white/80 tracking-[-0.01em]"
-                    style={{ fontFamily: "var(--font-display)" }}
+                    className="text-[clamp(1.1rem,2.5vw,1.5rem)] font-bold tracking-[-0.01em]"
+                    style={{ fontFamily: "var(--font-display)", color: section.color }}
                   >
                     {section.category}
                   </h2>

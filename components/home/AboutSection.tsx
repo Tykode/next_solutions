@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Reveal } from "@/components/shared/Reveal";
@@ -54,7 +55,7 @@ export function AboutSection() {
                 className="text-[clamp(2.8rem,6vw,5.5rem)] font-bold leading-[1.02] tracking-[-0.04em] mb-8"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                <span className="text-white">Pas de revendeur.</span>
+                <span className="text-[#f0a050]">Pas de revendeur.</span>
                 <br />
                 <span className="text-white/50">Tout géré en direct,</span>
                 <br />
@@ -137,10 +138,12 @@ export function AboutSection() {
                 </div>
                 <div>
                   <div
-                    className="text-[14px] font-bold text-white/80 group-hover:text-white mb-1.5 transition-colors duration-200"
+                    className="text-[14px] font-bold text-white/80 mb-1.5 transition-colors duration-200"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    {p.label}
+                    <span className="group-hover:text-[var(--pillar-color)] transition-colors duration-200" style={{ "--pillar-color": p.color } as CSSProperties}>
+                      {p.label}
+                    </span>
                   </div>
                   <p className="text-[13px] text-white/55 leading-relaxed">
                     {p.detail}
