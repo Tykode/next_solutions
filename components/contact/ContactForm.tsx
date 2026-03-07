@@ -121,7 +121,7 @@ export function ContactForm() {
               <label htmlFor="phone" className="block text-[11.5px] font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
                 Téléphone
               </label>
-              <input {...register("phone")} id="phone" type="tel" autoComplete="tel" placeholder="+0594 XX XX XX" className={inputCls(false)} />
+              <input {...register("phone")} id="phone" type="tel" autoComplete="tel" placeholder="0594 00 00 00" className={inputCls(false)} />
             </div>
 
             <div>
@@ -158,7 +158,7 @@ export function ContactForm() {
             {status === "error" && (
               <div className="flex items-center gap-2.5 p-3.5 rounded-xl bg-red-500/[0.08] border border-red-500/20 text-red-400 text-[13px]">
                 <AlertCircle className="w-4 h-4 shrink-0" />
-                Envoi échoué. Réessayez ou appelez-nous directement au +0594 25 13 26.
+                Votre message n&apos;a pas pu être envoyé. Réessayez ou appelez-nous au 0594 25 13 26.
               </div>
             )}
 

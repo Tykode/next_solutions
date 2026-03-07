@@ -79,7 +79,7 @@ export default function CGUPage() {
               </h2>
               <p className="text-sm text-white/60 leading-relaxed">
                 Pour toute question relative aux présentes mentions légales, vous pouvez nous
-                contacter par email à contact@next-solutions.fr ou par téléphone au +0594 25 13 26.
+                contacter par email à contact@next-solutions.fr ou par téléphone au 0594 25 13 26.
               </p>
             </article>
           </div>

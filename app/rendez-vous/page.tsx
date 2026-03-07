@@ -74,7 +74,7 @@ export default function RendezVousPage() {
                       className="inline-flex items-center gap-2 text-[13.5px] font-semibold text-[#f0a050] hover:text-[#f5b060] transition-colors min-h-[44px]"
                     >
                       <Phone className="w-4 h-4" />
-                      +0594 25 13 26
+                      0594 25 13 26
                     </a>
                     <a
                       href="mailto:contact@next-solutions.fr"

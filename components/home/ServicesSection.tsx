@@ -14,6 +14,7 @@ const services = [
     glowClass: "card-glow-purple",
     badgeVariant: "purple" as const,
     tags: ["Android", "Windows", "AURES"],
+    cta: "Voir les caisses",
   },
   {
     icon: BarChart3,
@@ -24,6 +25,7 @@ const services = [
     glowClass: "card-glow-blue",
     badgeVariant: "blue" as const,
     tags: ["Kwisatz", "WaveSoft", "Multi-sites"],
+    cta: "Voir les logiciels",
   },
   {
     icon: CreditCard,
@@ -34,6 +36,7 @@ const services = [
     glowClass: "card-glow-green",
     badgeVariant: "green" as const,
     tags: ["IP · GSM · Wi-Fi", "Ingenico", "PCI PTS V6"],
+    cta: "Voir les terminaux",
   },
   {
     icon: Scale,
@@ -44,6 +47,7 @@ const services = [
     glowClass: "card-glow-pink",
     badgeVariant: "pink" as const,
     tags: ["Mettler Toledo", "Precia Molen", "Homologuée"],
+    cta: "Voir les balances",
   },
 ];
 
@@ -125,8 +129,8 @@ export function ServicesSection() {
                       className="flex items-center gap-1.5 text-[12.5px] font-semibold"
                       style={{ color: s.color }}
                     >
-                      Découvrir
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
+                      {s.cta}
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
                     </div>
                   </Card>
                 </Link>

@@ -75,7 +75,7 @@ const faqs = [
       },
       {
         q: "Comment faire une réclamation ?",
-        a: "Appelez-nous directement au +0594 25 13 26 — c'est le moyen le plus rapide. Ou écrivez à contact@next-solutions.fr en précisant votre numéro de client. Chaque réclamation est prise en charge par un responsable et traitée sous 48h ouvrées.",
+        a: "Appelez-nous directement au 0594 25 13 26 — c'est le moyen le plus rapide. Ou écrivez à contact@next-solutions.fr en précisant votre numéro de client. Chaque réclamation est prise en charge par un responsable et traitée sous 48h ouvrées.",
       },
     ],
   },
@@ -187,7 +187,7 @@ export default function FAQPage() {
                 href="tel:+594594251326"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#f0a050] text-[#09080c] text-[13.5px] font-bold rounded-full hover:bg-[#f5b060] transition-all hover:shadow-[0_0_24px_rgba(240,160,80,0.35)]"
               >
-                +0594 25 13 26
+                0594 25 13 26
               </a>
               <a
                 href="mailto:contact@next-solutions.fr"

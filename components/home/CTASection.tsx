@@ -7,7 +7,7 @@ const channels = [
   {
     Icon: Phone,
     label: "Appelez-nous",
-    value: "+0594 25 13 26",
+    value: "0594 25 13 26",
     href: "tel:+594594251326",
     color: "#52c48a",
     primary: false,

@@ -86,7 +86,7 @@ export function Footer() {
           {/* Contact compact */}
           <div className="space-y-2.5 pt-1">
             {[
-              { Icon: Phone, text: "+0594 25 13 26",            href: "tel:+594594251326" },
+              { Icon: Phone, text: "0594 25 13 26",            href: "tel:+594594251326" },
               { Icon: Mail,  text: "contact@next-solutions.fr",  href: "mailto:contact@next-solutions.fr" },
               { Icon: MapPin,text: "Cayenne 97300, Guyane",      href: "https://maps.google.com/?q=1436+Rte+de+Baduel+Cayenne+97300+Guyane" },
             ].map(({ Icon, text, href }) => (

@@ -1,11 +1,11 @@
 import { z } from "zod";
 
 export const contactSchema = z.object({
-  name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
-  email: z.string().email("Adresse email invalide"),
+  name: z.string().min(2, "Indiquez votre nom complet"),
+  email: z.string().email("Email incorrect — ex : jean@entreprise.com"),
   phone: z.string().optional(),
-  subject: z.string().min(3, "Le sujet est requis"),
-  message: z.string().min(10, "Le message doit contenir au moins 10 caractères"),
+  subject: z.string().min(3, "Précisez l'objet de votre demande"),
+  message: z.string().min(10, "Décrivez votre demande en quelques mots"),
 });
 
 export type ContactFormData = z.infer<typeof contactSchema>;

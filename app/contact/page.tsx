@@ -14,7 +14,7 @@ const contactInfo = [
   {
     Icon: Phone,
     title: "Téléphone",
-    lines: ["+0594 25 13 26", "+0694 47 79 80"],
+    lines: ["0594 25 13 26", "0694 47 79 80 (mobile)"],
     color: "#52c48a",
     href: "tel:+594594251326",
   },
