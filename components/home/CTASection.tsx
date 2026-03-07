@@ -40,7 +40,7 @@ export function CTASection() {
           <Card className="p-10 md:p-14 bg-[var(--c-surface)] border-white/[0.10] relative overflow-hidden">
 
             {/* Colored top border */}
-            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-[#b07ae0]/60 via-[#f0a050] to-[#52c48a]/60 pointer-events-none" />
+            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-[#b07ae0]/40 via-[#f0a050]/80 to-[#52c48a]/40 pointer-events-none" />
 
             {/* Decorative corner glows */}
             <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-[#f0a050]/[0.08] blur-[70px] rounded-full pointer-events-none" />

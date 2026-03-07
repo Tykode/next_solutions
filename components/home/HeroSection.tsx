@@ -26,7 +26,7 @@ export function HeroSection() {
         <div className="animate-fade-up" style={{ animationDelay: "0ms" }}>
           <div className="inline-flex items-center gap-2 text-[#f0a050] text-[12px] font-semibold mb-10 px-3.5 py-1.5 rounded-full border border-[#f0a050]/[0.22] bg-[#f0a050]/[0.06]">
             <span className="relative flex h-2 w-2 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f0a050] opacity-50" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f0a050] opacity-30" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f0a050]" />
             </span>
             Cayenne · Guyane française · depuis 2014
