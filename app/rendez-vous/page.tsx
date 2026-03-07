@@ -37,7 +37,7 @@ export default function RendezVousPage() {
             <div>
               <Reveal>
                 <h2
-                  className="text-[22px] font-bold text-white mb-6"
+                  className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-white leading-[1.06] tracking-[-0.03em] mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Ce que couvre ce rendez-vous :
@@ -49,7 +49,7 @@ export default function RendezVousPage() {
                   <Reveal key={item} delay={i * 60}>
                     <div className="flex items-start gap-3 group">
                       <CheckCircle className="w-5 h-5 text-[#f0a050] shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110" />
-                      <span className="text-[14px] text-white/55 leading-relaxed group-hover:text-white/70 transition-colors">
+                      <span className="text-[14.5px] text-white/60 leading-relaxed group-hover:text-white/75 transition-colors">
                         {item}
                       </span>
                     </div>

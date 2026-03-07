@@ -65,7 +65,7 @@ export default function RejoindrePage() {
                     <Icon className="w-5 h-5" style={{ color }} />
                   </div>
                   <h3
-                    className="text-[15px] font-bold text-white/85 group-hover:text-white mb-2 transition-colors"
+                    className="text-[17px] font-bold text-white/85 group-hover:text-white mb-2 transition-colors tracking-[-0.01em]"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {title}
@@ -80,7 +80,7 @@ export default function RejoindrePage() {
           <Reveal>
             <div className="max-w-3xl mx-auto">
               <h2
-                className="text-[clamp(1.6rem,3vw,2.2rem)] font-bold text-white mb-8"
+                className="text-[clamp(2rem,4vw,3.2rem)] font-bold text-white leading-[1.06] tracking-[-0.03em] mb-8"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Envoyez-nous votre candidature

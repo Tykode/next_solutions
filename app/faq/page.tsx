@@ -90,7 +90,7 @@ function FAQItem({ q, a, color }: { q: string; a: string; color: string }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-4 p-5 text-left hover:bg-white/[0.04] transition-colors"
       >
-        <span className="text-[14px] font-medium text-white/65 leading-relaxed">
+        <span className="text-[15px] font-semibold text-white/75 leading-relaxed">
           {q}
         </span>
         <ChevronDown
@@ -138,10 +138,10 @@ export default function FAQPage() {
           <div className="space-y-10">
             {faqs.map((section) => (
               <div key={section.category}>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-2 h-2 rounded-full" style={{ background: section.color }} />
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-3 h-3 rounded-full" style={{ background: section.color }} />
                   <h2
-                    className="text-[15px] font-bold text-white/70"
+                    className="text-[clamp(1.1rem,2.5vw,1.5rem)] font-bold text-white/80 tracking-[-0.01em]"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {section.category}
@@ -160,7 +160,7 @@ export default function FAQPage() {
           <div className="mt-16 text-center p-10 rounded-2xl glass">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(240,160,80,0.06),transparent)] pointer-events-none rounded-2xl" />
             <h3
-              className="text-[18px] font-bold text-white mb-2"
+              className="text-[clamp(1.3rem,2.5vw,1.8rem)] font-bold text-white tracking-[-0.02em] mb-2"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Votre question n&apos;est pas dans la liste ?

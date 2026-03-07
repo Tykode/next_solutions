@@ -59,7 +59,7 @@ export default function ContactPage() {
             <div className="lg:col-span-2 space-y-3">
               <Reveal>
                 <h2
-                  className="text-[22px] font-bold text-white mb-4"
+                  className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-white leading-[1.06] tracking-[-0.03em] mb-4"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Retrouvez-nous

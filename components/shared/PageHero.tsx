@@ -75,7 +75,7 @@ export function PageHero({
 
         {/* Title */}
         <h1
-          className="text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-[1.08] tracking-[-0.03em] max-w-3xl mb-5 animate-fade-up"
+          className="text-[clamp(2.4rem,6vw,5.5rem)] font-bold text-white leading-[1.04] tracking-[-0.04em] max-w-3xl mb-5 animate-fade-up"
           style={{ fontFamily: "var(--font-display)", animationDelay: "100ms" }}
         >
           {title}
