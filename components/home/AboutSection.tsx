@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Reveal } from "@/components/shared/Reveal";
+import { CountUp } from "@/components/shared/CountUp";
 
 const quadStats = [
   { label: "Expertise locale",  value: "10+",  color: "#f0a050" },
@@ -83,12 +84,11 @@ export function AboutSection() {
                         isTop  ? "py-8 border-b" : "py-8",
                       ].join(" ")}
                     >
-                      <div
+                      <CountUp
+                        value={s.value}
                         className="text-[clamp(2.6rem,4.5vw,4.2rem)] font-bold leading-none tracking-[-0.04em] mb-2.5 tabular-nums"
                         style={{ color: s.color, fontFamily: "var(--font-display)" }}
-                      >
-                        {s.value}
-                      </div>
+                      />
                       <div className="text-[12px] text-white/42 leading-snug">
                         {s.label}
                       </div>

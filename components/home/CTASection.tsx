@@ -72,7 +72,7 @@ export function CTASection() {
                     href={href}
                     className={`group flex items-center gap-4 p-4 rounded-2xl border transition-all duration-200 ${
                       primary
-                        ? "bg-[#f0a050] border-[#f0a050] hover:bg-[#f5b060] hover:shadow-[0_0_32px_rgba(240,160,80,0.3)] active:scale-[0.98]"
+                        ? "btn-shimmer bg-[#f0a050] border-[#f0a050] hover:bg-[#f5b060] hover:shadow-[0_0_32px_rgba(240,160,80,0.3)] active:scale-[0.98]"
                         : "border-white/[0.09] bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/[0.16]"
                     }`}
                   >

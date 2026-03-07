@@ -52,7 +52,7 @@ export function Footer() {
           </div>
           <Link
             href="/rendez-vous"
-            className="shrink-0 group inline-flex items-center gap-2 px-6 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] text-[#05080f] text-sm font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] active:scale-[0.97]"
+            className="btn-shimmer shrink-0 group inline-flex items-center gap-2 px-6 py-3.5 bg-[#f0a050] hover:bg-[#f5b060] text-[#05080f] text-sm font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] active:scale-[0.97]"
           >
             Planifier un rendez-vous
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -93,7 +93,7 @@ export function Footer() {
               <a
                 key={text}
                 href={href}
-                className="flex items-center gap-2.5 text-[13px] text-white/52 hover:text-white/80 transition-colors"
+                className="flex items-center gap-2.5 py-1.5 text-[13px] text-white/52 hover:text-white/80 transition-colors min-h-[44px]"
               >
                 <Icon className="w-3.5 h-3.5 text-[#f0a050]/60 shrink-0" />
                 {text}

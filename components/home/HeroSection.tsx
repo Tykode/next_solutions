@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
+import { CountUp } from "@/components/shared/CountUp";
 
 const STATS = [
   { value: "10+",  label: "ans en Guyane",       color: "#f0a050" },
@@ -32,7 +33,7 @@ export function HeroSection() {
         {/* Headline */}
         <div className="animate-fade-up" style={{ animationDelay: "80ms" }}>
           <h1
-            className="text-[clamp(2.8rem,6vw,5.5rem)] font-bold leading-[1.06] tracking-[-0.03em] text-white max-w-[820px] mb-6"
+            className="text-[clamp(2.6rem,6vw,5.5rem)] font-bold leading-[1.06] tracking-[-0.03em] text-white max-w-[820px] mb-6"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Spécialiste{" "}
@@ -43,7 +44,7 @@ export function HeroSection() {
 
         {/* Subtitle */}
         <div className="animate-fade-up" style={{ animationDelay: "160ms" }}>
-          <p className="text-[17px] text-white/62 leading-[1.75] max-w-[480px] mb-10">
+          <p className="text-[16px] sm:text-[17px] text-white/62 leading-[1.75] max-w-[480px] mb-10">
             Équipements point de vente éprouvés, déployés et maintenus par
             notre équipe à Cayenne. Caisses, TPE, logiciels, balances —
             un seul interlocuteur, une seule hotline.
@@ -54,7 +55,7 @@ export function HeroSection() {
         <div className="animate-fade-up flex flex-wrap gap-3 mb-20" style={{ animationDelay: "240ms" }}>
           <Link
             href="/rendez-vous"
-            className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#f0a050] text-[#09080c] text-[14px] font-bold rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] active:scale-[0.97]"
+            className="btn-shimmer inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#f0a050] text-[#09080c] text-[14px] font-bold rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_32px_rgba(240,160,80,0.35)] active:scale-[0.97]"
           >
             <CalendarDays className="w-4 h-4" />
             Planifier un rendez-vous
@@ -68,21 +69,24 @@ export function HeroSection() {
           </Link>
         </div>
 
-        {/* Stats */}
+        {/* Stats — fix mobile border: only odd indices get border-l always; i=2 only on sm+ */}
         <div className="animate-fade-up" style={{ animationDelay: "320ms" }}>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 border-t border-white/[0.08] pt-8 max-w-[580px]">
             {STATS.map(({ value, label, color }, i) => (
               <div
                 key={label}
-                className={`pr-6 ${i > 0 ? "pl-6 border-l border-white/[0.08]" : ""}`}
+                className={[
+                  "pr-4 sm:pr-6",
+                  i % 2 !== 0 ? "pl-4 sm:pl-6 border-l border-white/[0.08]" : "",
+                  i === 2 ? "sm:pl-6 sm:border-l sm:border-white/[0.08]" : "",
+                ].filter(Boolean).join(" ")}
               >
-                <div
-                  className="text-[2rem] font-bold leading-none mb-1 tracking-[-0.03em]"
+                <CountUp
+                  value={value}
+                  className="text-[1.85rem] sm:text-[2rem] font-bold leading-none mb-1 tracking-[-0.03em]"
                   style={{ color, fontFamily: "var(--font-display)" }}
-                >
-                  {value}
-                </div>
-                <div className="text-[11.5px] text-white/45 leading-snug">{label}</div>
+                />
+                <div className="text-[11px] sm:text-[11.5px] text-white/45 leading-snug">{label}</div>
               </div>
             ))}
           </div>

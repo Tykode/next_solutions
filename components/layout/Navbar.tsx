@@ -42,7 +42,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300 animate-slide-down",
         scrolled
           ? "bg-[var(--c-bg)]/90 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_1px_0_0_var(--c-border)]"
           : "bg-transparent"
@@ -165,7 +165,7 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/rendez-vous"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-semibold text-[#05080f] bg-[#f0a050] rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_24px_rgba(240,160,80,0.32)] active:scale-[0.97]"
+              className="btn-shimmer inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-semibold text-[#05080f] bg-[#f0a050] rounded-full transition-all duration-200 hover:bg-[#f5b060] hover:shadow-[0_0_24px_rgba(240,160,80,0.32)] active:scale-[0.97]"
             >
               Prendre RDV
             </Link>
