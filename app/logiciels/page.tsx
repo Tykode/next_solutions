@@ -74,7 +74,7 @@ export default function LogicielsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product, i) => (
               <Reveal key={product.name} delay={i * 75} className="h-full">
-                <ProductCard {...product} accentColor="#4f8ef7" className="h-full" />
+                <ProductCard {...product} accentColor="#4f8ef7" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="h-full" />
               </Reveal>
             ))}
           </div>

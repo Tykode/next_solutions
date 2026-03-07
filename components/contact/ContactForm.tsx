@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { contactSchema, type ContactFormData } from "@/lib/validations";
 import { cn } from "@/lib/utils";
@@ -48,13 +47,8 @@ export function ContactForm() {
         Dites-nous ce dont vous avez besoin
       </h3>
 
-      <AnimatePresence mode="wait">
-        {status === "success" ? (
-          <motion.div
-            key="success"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center py-14 text-center"
+      {status === "success" ? (
+          <div className="animate-scale-in flex flex-col items-center justify-center py-14 text-center"
           >
             <div className="w-14 h-14 rounded-full bg-[#52c48a]/10 flex items-center justify-center mb-4">
               <CheckCircle className="w-7 h-7 text-[#52c48a]" />
@@ -74,14 +68,11 @@ export function ContactForm() {
             >
               Envoyer un nouveau message
             </button>
-          </motion.div>
+          </div>
         ) : (
-          <motion.form
-            key="form"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+          <form
             onSubmit={handleSubmit(onSubmit)}
-            className="space-y-4"
+            className="animate-fade-in space-y-4"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -184,9 +175,8 @@ export function ContactForm() {
               </a>
               . Droit d&apos;accès, rectification et suppression sur demande.
             </p>
-          </motion.form>
+          </form>
         )}
-      </AnimatePresence>
     </div>
   );
 }

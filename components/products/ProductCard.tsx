@@ -10,6 +10,7 @@ interface ProductCardProps {
   imageSrc: string;
   accentColor?: string;
   badgeVariant?: "amber" | "green" | "blue" | "purple" | "pink" | "default";
+  sizes?: string;
   className?: string;
 }
 
@@ -19,6 +20,7 @@ export function ProductCard({
   imageSrc,
   accentColor = "#f0a050",
   badgeVariant = "default",
+  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
   className,
 }: ProductCardProps) {
   return (
@@ -41,7 +43,7 @@ export function ProductCard({
             alt={`${name} — équipement point de vente Next Solutions`}
             fill
             className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes={sizes}
           />
         </div>
 
