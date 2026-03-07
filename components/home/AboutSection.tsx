@@ -51,14 +51,14 @@ export function AboutSection() {
 
               {/* Headline */}
               <h2
-                className="text-[clamp(2.4rem,5vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.035em] mb-8"
+                className="text-[clamp(2.8rem,6vw,5.5rem)] font-bold leading-[1.02] tracking-[-0.04em] mb-8"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-white">Pas de revendeur.</span>
                 <br />
-                <span className="text-white/50">Tout géré en direct,</span>
+                <span className="text-white/40">Tout géré en direct,</span>
                 <br />
-                <span className="text-white/50">depuis Cayenne.</span>
+                <span className="text-white/40">depuis Cayenne.</span>
               </h2>
 
               {/* Body */}

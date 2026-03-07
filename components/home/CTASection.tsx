@@ -51,12 +51,12 @@ export function CTASection() {
                   Prochaine étape
                 </p>
                 <h2
-                  className="text-[clamp(1.9rem,3.5vw,2.9rem)] font-bold text-white leading-[1.1] tracking-[-0.025em] mb-4"
+                  className="text-[clamp(2.2rem,4vw,3.5rem)] font-bold text-white leading-[1.05] tracking-[-0.03em] mb-4"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Votre équipement,
                   <br />
-                  <span className="text-white/45">livré et installé à Cayenne.</span>
+                  <span className="text-white/40">livré et installé à Cayenne.</span>
                 </h2>
                 <p className="text-[14px] text-white/58 leading-relaxed">
                   Audit gratuit, devis sans engagement, installation et formation incluses.

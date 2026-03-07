@@ -75,7 +75,7 @@ export default function CaissesPage() {
                     <div className="text-[10.5px] font-semibold text-white/25 uppercase tracking-[0.12em] mb-1.5">
                       {label}
                     </div>
-                    <div className="text-[15px] font-bold text-white/75">{value}</div>
+                    <div className="text-[clamp(1.1rem,2vw,1.6rem)] font-bold text-white tracking-[-0.02em]">{value}</div>
                   </div>
                 ))}
               </div>

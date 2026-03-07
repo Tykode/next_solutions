@@ -61,12 +61,12 @@ export function ServicesSection() {
           </p>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <h2
-              className="text-[clamp(1.9rem,4vw,3rem)] font-bold text-white leading-[1.1] tracking-[-0.025em]"
+              className="text-[clamp(2.4rem,5.5vw,4.5rem)] font-bold text-white leading-[1.05] tracking-[-0.03em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               4 gammes de solutions
               <br />
-              <span className="text-white/40">pour votre commerce</span>
+              <span className="text-white/35">pour votre commerce</span>
             </h2>
             <p className="text-[14px] text-white/52 max-w-xs leading-relaxed md:text-right">
               Équipements certifiés, support 6j/7. De l&apos;encaissement à la gestion,

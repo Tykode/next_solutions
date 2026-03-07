@@ -50,7 +50,7 @@ export default function AboutPage() {
 
           <Reveal className="mb-14">
             <h2
-              className="text-[clamp(1.9rem,4vw,3rem)] font-bold text-white leading-[1.1] tracking-[-0.025em]"
+              className="text-[clamp(2.4rem,5.5vw,4.5rem)] font-bold text-white leading-[1.04] tracking-[-0.03em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Ce qui nous distingue
@@ -59,19 +59,25 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {values.map((item, i) => (
-              <Reveal key={item.title} delay={i * 80}>
-                <div className="group p-8 rounded-3xl border border-white/[0.07] bg-white/[0.03] hover:border-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-                  <div
-                    className="w-10 h-1 rounded-full mb-5 transition-all duration-300 group-hover:w-16"
-                    style={{ background: item.color }}
-                  />
-                  <h3
-                    className="text-[18px] font-bold text-white/85 group-hover:text-white mb-3 transition-colors"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className="text-[14px] text-white/50 leading-relaxed">{item.desc}</p>
+              <Reveal key={item.title} delay={i * 80} className={i === 0 ? "md:col-span-2" : ""}>
+                <div className={`group border border-white/[0.07] bg-white/[0.03] hover:border-white/[0.14] hover:-translate-y-1 transition-all duration-300 rounded-3xl ${
+                  i === 0
+                    ? "p-10 md:flex md:items-start md:gap-12"
+                    : "p-8"
+                }`}>
+                  <div className={i === 0 ? "shrink-0" : ""}>
+                    <div
+                      className={`rounded-full mb-5 transition-all duration-300 group-hover:scale-x-125 origin-left ${i === 0 ? "w-14 h-1.5" : "w-10 h-1"}`}
+                      style={{ background: item.color }}
+                    />
+                    <h3
+                      className={`font-bold text-white/85 group-hover:text-white mb-3 transition-colors ${i === 0 ? "text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.02em]" : "text-[18px]"}`}
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className={`text-white/50 leading-relaxed ${i === 0 ? "text-[15px] md:pt-1" : "text-[14px]"}`}>{item.desc}</p>
                 </div>
               </Reveal>
             ))}

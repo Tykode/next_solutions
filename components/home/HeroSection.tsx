@@ -33,7 +33,7 @@ export function HeroSection() {
         {/* Headline */}
         <div className="animate-fade-up" style={{ animationDelay: "80ms" }}>
           <h1
-            className="text-[clamp(2.6rem,6vw,5.5rem)] font-bold leading-[1.06] tracking-[-0.03em] text-white max-w-[820px] mb-6"
+            className="text-[clamp(3rem,8vw,7rem)] font-bold leading-[1.02] tracking-[-0.04em] text-white max-w-[900px] mb-6"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Spécialiste{" "}
